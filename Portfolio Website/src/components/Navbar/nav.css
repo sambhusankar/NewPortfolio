@@ -1,0 +1,50 @@
+.navbar{
+    display:flex;
+    gap:15px;
+    justify-content: end;
+    margin:2vw;
+    font-size:1.3vw;
+}
+.nav-item{
+    color:white;
+    margin-left:2vw;
+    text-align: center; 
+}
+.dot{
+    position: relative;
+    top:-7px;
+    font-size: 0;
+    font-weight:bolder;
+    transition: font-size 0.3s ease-in-out;
+}
+.nav-item:hover{
+    color:white;
+}
+.copyright{
+    display:inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+.logo{
+    color:white;
+    position:absolute;
+    left:2vw;
+}
+.logo:hover{
+    color:white;
+}
+
+.logo-text{
+    margin-left:2px;
+    display:inline-block;
+}
+.shakable:hover{
+    animation:shake 1s ease-in-out;
+}
+
+@keyframes shake {
+    0%{transform: translateX(0);}
+    25%{transform: translateX(-8px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-3px);}
+    100%{transform: translateX(0);}
+}

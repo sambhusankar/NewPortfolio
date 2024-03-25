@@ -1,0 +1,40 @@
+import React, { useState, useEffect} from 'react'
+import "./home.css"
+import Nav from "../Navbar/nav"
+import Hero from "../Hero/hero"
+function Home(){ 
+    const hello = ["• Hello", "• नमस्ते", "• வணக்கம்", "• ନମସ୍କାର", "• ನಮಸ್ಕಾರ", "• नमस्ते"]
+    const [lang, setLang] = useState('')
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+      if (index < hello.length ){
+        setTimeout(() => {
+          setIndex((prev) => prev + 1);
+          setLang(hello[index]);
+        },200);
+        
+      }
+    },[lang, hello, index]);
+  
+    
+  return(
+    <div className="overflow-x-hidden overflow-y-hidden">
+    <div className="loading-page">
+    <p className="text-white h1 mx-auto my-auto"> { lang } </p>
+    </div>
+   
+    
+    <div className="home" style={{transition : "top 1s", top : lang ==hello[1] ? "0" : "100vh"}} >
+       <Nav />
+       <Hero />
+       <h1>hi everyone</h1>
+       <h1>this is sankr</h1>
+       <h1>how are you</h1>
+    </div> 
+
+</div>
+  )
+}
+
+export default Home
