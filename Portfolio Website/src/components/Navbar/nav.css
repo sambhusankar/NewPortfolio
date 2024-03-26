@@ -28,14 +28,21 @@
     color:white;
     position:absolute;
     left:2vw;
+    top:1.5vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .logo:hover{
     color:white;
 }
 
 .logo-text{
+    width:9.5vw;
+    text-wrap: nowrap;
     margin-left:2px;
     display:inline-block;
+    overflow-x: hidden;
 }
 .shakable:hover{
     animation:shake 1s ease-in-out;
