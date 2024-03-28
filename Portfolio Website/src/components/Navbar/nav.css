@@ -3,7 +3,8 @@
     gap:15px;
     justify-content: end;
     margin:2vw;
-    font-size:1.3vw;
+    font-size:16px;
+    z-index:20;
 }
 .nav-item{
     color:white;
@@ -38,7 +39,7 @@
 }
 
 .logo-text{
-    width:9.5vw;
+    width:115px;
     text-wrap: nowrap;
     margin-left:2px;
     display:inline-block;
@@ -47,6 +48,15 @@
 .shakable:hover{
     animation:shake 1s ease-in-out;
 }
+.menu{
+    background-color: transparent;
+    display: none;
+    border:none;
+    outline:none;
+    position: relative;
+    bottom:1.5vh;
+    
+}
 
 @keyframes shake {
     0%{transform: translateX(0);}
@@ -54,4 +64,14 @@
     50%{transform: translateX(5px);}
     75%{transform: translateX(-3px);}
     100%{transform: translateX(0);}
+}
+
+
+@media screen and (max-width:500px) {
+    .nav-item{
+        display: none;
+    }
+    .menu{
+        display:inline-block;
+    }
 }

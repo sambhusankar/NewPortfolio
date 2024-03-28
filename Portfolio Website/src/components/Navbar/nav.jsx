@@ -57,6 +57,9 @@ function Nav(){
                 <p className='copyright'>©</p>
                <p className = "logo-text"> <span>Code by Sankar</span> <span>Sambhu Sankar</span>  </p>
             </Link>
+
+            <button className = "menu shakable">● Menu</button>
+
             <Link to = "/work" className="nav-item" >
                 <p className = "shakable">Work</p>
                 <span className = "dot" >●</span>

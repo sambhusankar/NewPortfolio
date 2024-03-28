@@ -28,9 +28,6 @@ function Home(){
     <div className="home" style={{transition : "top 1s", top : lang ==hello[1] ? "0" : "100vh"}} >
        <Nav />
        <Hero />
-       <h1>hi everyone</h1>
-       <h1>this is sankr</h1>
-       <h1>how are you</h1>
     </div> 
 
 </div>

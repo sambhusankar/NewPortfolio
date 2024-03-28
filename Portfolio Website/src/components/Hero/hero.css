@@ -1,3 +1,64 @@
+.hero-page{
+    width:100vw;
+    height:100vh;
+    background-color: #728FAF;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top:20px;
+    color:white;
+}
+.location{
+    width:25vw;
+    z-index:20;
+}
+.box{
+    height:100px;
+    width:250px;
+    background-color: black;
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+    display:flex;
+}
+.india{
+    font-size:20px;
+    height:100%;
+    width:50%;
+    text-wrap: wrap;
+    text-align: center;
+    padding:15px;
+    margin-left:2vw;
+}
+.atlas-container{
+    width:70px;
+    height:70px;
+    clip-path: circle(50% at 50% 50%);
+    background-color:#728FAF;
+    text-align: center;
+    margin:auto;
+    font-size:50px;
+}
+.photo{
+    width:33.3vw;
+}
+.skill{
+    width:400px;
+    z-index:20;
+    font-size: 30px;
+    padding-left:30px;
+    text-wrap: nowrap;
+    position: relative;
+    bottom:30px;
+}
+.arrow{
+    width:max-content;
+    transform: rotate(-45deg);
+}
 .img{
-    width:550px;
+    width:75vh;
+    position: absolute;
+    top:0;
+    right:30vw;
+
 }
