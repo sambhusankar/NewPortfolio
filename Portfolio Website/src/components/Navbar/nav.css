@@ -2,8 +2,8 @@
     display:flex;
     gap:15px;
     justify-content: end;
-    margin:2vw;
     font-size:16px;
+    margin:2vw;
     z-index:20;
 }
 .nav-item{
@@ -57,7 +57,46 @@
     bottom:1.5vh;
     
 }
-
+.side-bar{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    line-height: 0px;
+    padding-top:20px;
+    position: fixed;
+    overflow: hidden;
+    right:4vw;
+    top:4vw;
+    transition: opacity 0.9s;
+    z-index:30;
+    opacity: 0;
+}
+.side-bar-text{
+    font-size:90%;
+    font-weight: bold;
+    color:white;
+    position: relative;
+    z-index:2;
+    transition: transform 0.5s ease;
+}
+.sidebar_active{
+    background-color: rgb(37, 127, 191);
+}
+.side-bar::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    height:0%;
+    width:0%;
+    border-radius: 50%;
+    background-color: rgb(37, 127, 191);
+    transition: width 0.1s, height 0.1s;
+}
+.side-bar:hover::before{
+    height:100%;
+    width:100%;
+}
 @keyframes shake {
     0%{transform: translateX(0);}
     25%{transform: translateX(-8px);}
@@ -66,6 +105,15 @@
     100%{transform: translateX(0);}
 }
 
+.cross1{
+    transform: rotate(-45deg);
+    transform-origin: 85%;
+}
+
+.cross2{
+    transform: rotate(45deg);
+    transform-origin: 85%;
+}
 
 @media screen and (max-width:500px) {
     .nav-item{

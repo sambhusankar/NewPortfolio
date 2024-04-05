@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./nav.css"
+import Sidebar from '../Sidebar/sidebar'
 function Nav(){
     const navRef = useRef(null);
-    
+    const [sidebarOpen, setSidebarOpen] = useState(false);
    //copyright rotation and logo text change
     useEffect(() => {
         const logo = navRef.current.querySelector(".logo");
@@ -49,8 +50,45 @@ function Nav(){
 
     }, []);
 
-
+   // showing side-bar on scroll
+   useEffect(() => {
+        const side_bar = navRef.current.querySelector(".side-bar");
+        document.addEventListener("scroll", () => {
+        if(window.scrollY > 60){
+            side_bar.style.opacity = "1"
+        }
+        else{
+            side_bar.style.opacity = "0"
+        }
+   }, [window.scrollY])
     
+}, []);
+
+   // handling sidebar opening
+   function handleSidebar(){
+
+        const sidebar = navRef.current.querySelector(".side-bar")
+        const sidebar_childs = navRef.current.querySelectorAll(".side-bar-text")
+        setSidebarOpen( ! sidebarOpen)
+        sidebar_childs[0].classList.toggle("cross1")
+        sidebar_childs[1].classList.toggle("cross2")
+        sidebar.classList.toggle("sidebar_active")      
+   };
+   
+   //showing the side-bar button in small screens 
+   useEffect(() => {
+    const side_bar = navRef.current.querySelector(".side-bar")
+    if(document.body.offsetWidth <= 500 && sidebarOpen == true){
+        side_bar.style.opacity = "1"
+       }
+    else if(window.scrollY == 0 && sidebarOpen == false){
+        side_bar.style.opacity = "0"
+    }
+
+   }, [ sidebarOpen ])
+
+ 
+
     return(
         <div className= "navbar" ref = {navRef}>
             <Link to = "/" className="logo shakable" >
@@ -58,7 +96,11 @@ function Nav(){
                <p className = "logo-text"> <span>Code by Sankar</span> <span>Sambhu Sankar</span>  </p>
             </Link>
 
-            <button className = "menu shakable">● Menu</button>
+            <button className = "menu shakable" onClick = {handleSidebar}>● Menu</button>
+            <button className = "side-bar shakable" onClick = {handleSidebar}>
+                <p className = "side-bar-text">───</p>
+                <p className = "side-bar-text">───</p>
+            </button>
 
             <Link to = "/work" className="nav-item" >
                 <p className = "shakable">Work</p>
@@ -68,10 +110,11 @@ function Nav(){
                  <p className = "shakable">About</p>
                 <span className = "dot" >●</span>
             </Link>
-            <Link to = ".contact" className="nav-item" >
+            <Link to = "/contact" className="nav-item" >
                 <p className = "shakable">Contact</p>
                 <span className = "dot">●</span>
             </Link>
+            <Sidebar isopen = { sidebarOpen }/>
         </div>
     )
 }

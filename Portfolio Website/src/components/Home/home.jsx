@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react'
 import "./home.css"
 import Nav from "../Navbar/nav"
 import Hero from "../Hero/hero"
+import About from "../About/about"
 function Home(){ 
     const hello = ["• Hello", "• नमस्ते", "• வணக்கம்", "• ନମସ୍କାର", "• ನಮಸ್ಕಾರ", "• नमस्ते"]
     const [lang, setLang] = useState('')
@@ -28,6 +29,7 @@ function Home(){
     <div className="home" style={{transition : "top 1s", top : lang ==hello[1] ? "0" : "100vh"}} >
        <Nav />
        <Hero />
+       <About />
     </div> 
 
 </div>
