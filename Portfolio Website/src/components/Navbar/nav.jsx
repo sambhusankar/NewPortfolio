@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./nav.css"
 import Sidebar from '../Sidebar/sidebar'
+
 function Nav(){
     const navRef = useRef(null);
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -87,7 +88,7 @@ function Nav(){
 
    }, [ sidebarOpen ])
 
- 
+  
 
     return(
         <div className= "navbar" ref = {navRef}>

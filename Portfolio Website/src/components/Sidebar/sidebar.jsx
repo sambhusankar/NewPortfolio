@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import './sidebar.css' 
+import Magnetic from "../../Animations/magnetic"
 function Sidebar({isopen}){
     const Ref = useRef(null)
     const overlay = document.createElement("div")
@@ -21,7 +22,9 @@ function Sidebar({isopen}){
             links[i].addEventListener("mouseout", () => {
                 dots[i].style.fontSize = "0"
             })
-        }
+        };
+        
+
     }, []);
 
     //making light dark to the main body on sidebar open and opening sidebar
@@ -41,7 +44,19 @@ function Sidebar({isopen}){
         }
     }, [isopen]);
 
-    
+    useEffect(() => {
+        const element = Ref.current.querySelector(".a");
+        element.addEventListener("mousemove", (e) => {
+            const y = element.offsetTop
+            const x = element.offsetLeft
+            const m_x = e.pageX - x - element.offsetWidth / 2
+            const m_y = e.pageY - y - element.offsetHeight / 2
+            element.style.transform = `translate(${m_x * 0.3}px, ${m_y * 0.3}px)`
+        });
+        element.addEventListener("mouseout", () => {
+            element.style.transform = "";
+        })
+    }, [])
 
     return(
         <div className = "sidebar-page" ref = { Ref }>
@@ -68,10 +83,10 @@ function Sidebar({isopen}){
 
             <h5>SOCIALS</h5>
             <div>
-                <a href = "https://in.linkedin.com/in/s-sankar-swain-b9821a270">Linkedin</a>
-                <a href = "https://twitter.com/sankar_sw">Twitter</a>
-                <a href = "https://github.com/sambhusankar">Github</a>
-                <a href = "https://wa.link/igftyr">Whatsapp</a>
+                <a className = "a " href = "https://in.linkedin.com/in/s-sankar-swain-b9821a270">Linkedin</a>
+                <a className = "a " href = "https://twitter.com/sankar_sw">Twitter</a>
+                <a className = "a " href = "https://github.com/sambhusankar">Github</a>
+                <a className = "a " href = "https://wa.link/igftyr">Whatsapp</a>
             </div>
 
         </div>

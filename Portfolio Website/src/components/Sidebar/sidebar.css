@@ -24,12 +24,31 @@
 }
 .Links{
     color:white;
+    margin-left: 10px;
 }
 
-.sidebar-page a{
+.sidebar-page .a{
     margin:3%;
     color:white;
     cursor: pointer;
+    position: relative;
+}
+.sidebar-page .a::after{
+    content: "";
+    position: absolute;
+    bottom:-5px;
+    left:0;
+    background-color:white;
+    height:1px;
+    width:100%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.sidebar-page .a:hover::after{
+    transform: scale(100%);
+}
+.sidebar-page .a:hover{
+    color:white;
 }
 
 
