@@ -1,0 +1,28 @@
+.footer{
+    width:100vw;
+    display: flex;
+    background-color: rgb(20, 20, 20);
+    color:white;
+    justify-content: space-between;
+    padding: 20px 5vw;
+    flex-wrap: wrap;
+}
+.footer .version-time{
+    display: flex;
+    gap: 50px;
+}
+
+.footer h5{
+    color:gray;
+    font-size: 10px;
+} 
+ 
+@media screen and (max-width:500px) {
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .version-time{
+        justify-content: space-between;
+        margin: 0;
+    }
+}

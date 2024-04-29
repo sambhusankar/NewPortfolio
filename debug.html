@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            
+    
+        }
+        .main{
+            height:100vh;
+            width:100vw;
+            background-color:rgb(12, 9, 9);
+    
+            
+        }
+        .two{
+            width: 100vw;
+            height:100vh;
+            background-color: red;
+            position: relative;
+        }
+  
+        .name{
+            width: 100vw;
+            height:100vh;
+            background-color: green;
+            
+        }
+        
+      
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class = "two">
+            two
+        </div>
+        <div class = "name">
+            name
+        </div>
+    </div>
+    <script>
+     const two = document.getElementsByClassName("two")[0]
+     const name = document.getElementsByClassName("name")[0]
+     const pos = name.getBoundingClientRect()
+     console.log(pos.top + window.scrollY)
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+.about-page{
+    background-color: white;
+    color:black;
+    padding:16vh 16vw;
+    position: relative;
+}
+.about-page::after{
+    content: "";
+    width:100vw;
+    height:20vh;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background-color: white;
+    position: absolute;
+    left:0;
+    bottom:-10vh;
+    z-index:5;
+    transition: height 1s, bottom 1s;
+}
+.animate::after{
+    height:0;
+    bottom:0px;
+}
+.about-top-section{
+    display: grid;
+    grid-template-columns: 45vw 25vw ;
+}
+.about-top-section p:nth-child(1){
+    font-size: 30px;  
+}
+.about-top-section p:nth-child(2){
+    margin-left: 70px;
+}
+.about-top-section h5{
+    color: rgb(150, 148, 148);
+    font-size: 13px;
+    margin-top:150px;
+}
+.aboutme-bubble{
+    background-color: black;
+    color:white;
+    height:150px;
+    width:150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left:70px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+.aboutme-bubble span{
+    z-index: 2;
+    font-size: 92%;
+}
+ 
+.aboutme-bubble::before{
+    content: "";
+    height:0;
+    width:0;
+    border-radius: 50%;
+    background-color: rgb(37, 127, 191);
+    position: absolute;
+    top:0;
+    left:0;
+    transition: height 0.5s, width 0.5s;
+  
+}
+.aboutme-bubble:hover::before{
+    height:100%;
+    width:100%;   
+}
+
+
+.works hr{
+    width: 92vw;
+    position: relative;
+    right:15vw;
+    margin:0;
+}
+.works li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:150px;
+    margin:0;
+}
+.works li:hover span{
+    color:rgb(158, 154, 154);
+    position: relative;
+    left:15px;
+}
+.works li:hover h1{
+    color:rgb(158, 154, 154);
+    position: relative;
+    right:15px;
+}
+.more-work{
+    display: flex;
+    flex-direction: column;
+}
+.more-work-btn{ 
+    color:black;
+    padding: 15px 30px;
+    border-radius: 30px;
+    display: flex;
+    position: relative;
+    margin:40px auto 100px auto;
+    border:1px solid rgb(173, 173, 173);
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+.more-work-btn span{  
+    z-index: 5;  
+}
+.more-work-btn:hover{
+    color:black;
+}
+.more-work-btn::before{
+    content: "";
+    height:0;
+    width:0;
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: rgb(37, 127, 191);
+    border-radius: 25px;
+    transition: height 0.5s, width 0.5s;
+}
+.more-work-btn:hover::before{
+    height:100%;
+    width:100%;
+}
+.left-scroll, .right-scroll{
+    display: flex;
+    margin:20px 0;
+    overflow: hidden;
+    gap: 30px;
+    width:110vw;
+    position: relative;
+    right:20vw;
+    transition: right 1s ease;
+    z-index:10;
+}
+.right-scroll{
+    right:17vw;
+}
+
+.about-page .project-img{
+    height:300px;
+    width:300px;
+    overflow: hidden;
+    position: fixed;
+    left:0;
+    top:0;
+    transform: translate(-50%, -50%);
+    transform: scale(0%);
+    transition: transform 0.5s, left 0.1s, top 0.1s;
+    pointer-events:none;
+    background-color: black;
+    z-index:2;
+    cursor: pointer;
+}
+.about-page .project-img .view-project{
+    height:80px;
+    width:80px;
+    background-color: rgb(3, 121, 181);
+    color:white;
+    text-align: center;
+    padding-top:25px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:100px;
+    left:100px;
+    cursor: pointer;
+    z-index:50;
+}
+.about-page .project-img .live-projects{  
+    width:100%;
+    height:100%;
+    border:25px solid rgb(56, 67, 89);
+    border-top-width: 75px;
+    border-bottom-width: 75px;
+    
+}
+.project-small-screen{
+    display: none;
+}
+
+@media screen and (max-width:700px) {
+    .about-page{
+        padding: 20px;
+    }
+    .about-top-section h5, .works, .left-scroll, .right-scroll{
+        
+        display: none;
+    }
+    .about-top-section{
+        padding-top:50px;
+        grid-template-columns: 1fr;
+    }
+    .about-top-section p:nth-child(1){
+        font-size: 4vw;
+    }
+    .about-top-section p:nth-child(2){
+        margin: 30px 0;
+        width:60vw;
+    }
+    .aboutme-bubble{
+        left:45vw;
+        bottom:40px;
+    }
+   
+    .project-small-screen{
+        display: flex;
+        flex-direction: column;
+        width:100vw;
+     }
+     .project-small-screen div img{
+        width:92%;
+        border:20px solid rgb(63, 64, 47);
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+     }
+     .project-small-screen .view-project{
+        height:80px;
+        width:80px;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 25px;
+        background-color: rgb(0, 98, 255);
+        color:white;
+        
+     }
+}

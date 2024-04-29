@@ -1,0 +1,26 @@
+.home{
+    background-color: #728FAF;
+    position:absolute;
+    width:100vw;
+    overflow: hidden;
+   
+}
+.loading-page{
+    background-color: black;
+    height:100vh;
+    width:100vw;
+    display:flex;
+    position: relative;
+    
+}
+.loading-page::after{
+    content: "";
+    width:100vw;
+    height:40vh;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background-color: black;
+    position: absolute;
+    left:0;
+    bottom:-20vh;
+   
+}
