@@ -1,6 +1,6 @@
 .hero-page{
     width:100vw;
-    height:102vh;
+    height:100vh;
     background-color: #728FAF;
     display:flex;
     justify-content: space-between;
@@ -55,7 +55,7 @@
     position: relative;
     bottom:70px;
 }
-.arrow{
+.skill .arrow{
     width:max-content;
     transform: rotate(-45deg);
 }
@@ -91,6 +91,7 @@
     .img{
         position: relative;
         width:65vh;
+        
         margin: auto;
         top:10vh;
     }

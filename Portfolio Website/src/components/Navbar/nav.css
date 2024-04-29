@@ -5,9 +5,10 @@
     font-size:16px;
     margin:2vw;
     z-index:20;
+    
 }
 .nav-item{
-    color:white;
+    
     margin-left:2vw;
     text-align: center; 
 }
@@ -18,15 +19,13 @@
     font-weight:bolder;
     transition: font-size 0.3s ease-in-out;
 }
-.nav-item:hover{
-    color:white;
-}
+
 .copyright{
     display:inline-block;
     transition: transform 0.3s ease-in-out;
 }
 .logo{
-    color:white;
+    
     position:absolute;
     left:2vw;
     top:1.5vh;
@@ -34,9 +33,7 @@
     display: flex;
     justify-content: center;
 }
-.logo:hover{
-    color:white;
-}
+
 
 .logo-text{
     width:115px;
@@ -45,9 +42,7 @@
     display:inline-block;
     overflow-x: hidden;
 }
-.shakable:hover{
-    animation:shake 1s ease-in-out;
-}
+
 .menu{
     background-color: transparent;
     display: none;
@@ -60,6 +55,7 @@
 .side-bar{
     height:80px;
     width:80px;
+    border:0.1px solid grey;
     border-radius: 50%;
     line-height: 0px;
     padding-top:20px;
@@ -67,9 +63,9 @@
     overflow: hidden;
     right:4vw;
     top:4vw;
-    transition: opacity 0.9s;
+    transition: transform 0.3s;
     z-index:30;
-    opacity: 0;
+    transform : scale(0%);
 }
 .side-bar-text{
     font-size:90%;
@@ -97,13 +93,7 @@
     height:100%;
     width:100%;
 }
-@keyframes shake {
-    0%{transform: translateX(0);}
-    25%{transform: translateX(-8px);}
-    50%{transform: translateX(5px);}
-    75%{transform: translateX(-3px);}
-    100%{transform: translateX(0);}
-}
+
 
 .cross1{
     transform: rotate(-45deg);

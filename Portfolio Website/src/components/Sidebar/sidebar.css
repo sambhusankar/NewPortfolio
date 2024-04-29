@@ -1,15 +1,30 @@
 .sidebar-page{
     height:100vh;
-    width:500px;
+    width:400px;
     background-color: black;
     color: white;
     position: fixed;
     top:0vw;
     right:-500px;
     padding:7%;
-    transition: right 0.7s ease;
-}
+    transition: right 1s ease ;
 
+}
+.sidebar-page::after{
+    content: "";
+    width:20%;
+    height:100%;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background-color: black;
+    position: absolute;
+    left:-45px;
+    bottom:0;
+    transition: left 0.3s, width 0.3s;
+}
+.animate::after{
+    width:0;
+    left:0;
+}
 .sidebar-page h5{
     font-size:10px;
     color:gray;
@@ -25,30 +40,6 @@
 .Links{
     color:white;
     margin-left: 10px;
-}
-
-.sidebar-page .a{
-    margin:3%;
-    color:white;
-    cursor: pointer;
-    position: relative;
-}
-.sidebar-page .a::after{
-    content: "";
-    position: absolute;
-    bottom:-5px;
-    left:0;
-    background-color:white;
-    height:1px;
-    width:100%;
-    transform: scale(0);
-    transition: transform 0.3s ease;
-}
-.sidebar-page .a:hover::after{
-    transform: scale(100%);
-}
-.sidebar-page .a:hover{
-    color:white;
 }
 
 

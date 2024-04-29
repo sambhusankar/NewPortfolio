@@ -3,6 +3,8 @@ import "./home.css"
 import Nav from "../Navbar/nav"
 import Hero from "../Hero/hero"
 import About from "../About/about"
+import Contact from '../Contact/contact'
+import Footer from '../Footer/footer'
 function Home(){ 
     const hello = ["• Hello", "• नमस्ते", "• வணக்கம்", "• ନମସ୍କାର", "• ನಮಸ್ಕಾರ", "• नमस्ते"]
     const [lang, setLang] = useState('')
@@ -27,9 +29,11 @@ function Home(){
    
     
     <div className="home" style={{transition : "top 1s", top : lang ==hello[1] ? "0" : "100vh"}} >
-       <Nav />
+       <Nav color = "white" />
        <Hero />
        <About />
+       <Contact />
+       <Footer />
     </div> 
 
 </div>

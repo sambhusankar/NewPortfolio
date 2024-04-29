@@ -8,36 +8,27 @@
         body{
             margin:0;
             padding:0;
-            overflow:hidden;
+            
     
         }
         .main{
             height:100vh;
             width:100vw;
             background-color:rgb(12, 9, 9);
-            display:flex;
-            flex-direction: column;
+    
             
         }
         .two{
-           border:1px solid white;
-        
-            width: 34px;
-            height:30px;
-            cursor: pointer;
-            text-align:center;
-            margin:auto;
-            margin-top:40vh;
-            text-wrap: nowrap;
-            overflow:hidden;
-            box-sizing: border-box;
-            transition: transform 5s ease;
-            box-sizing: content-box;
+            width: 100vw;
+            height:100vh;
+            background-color: red;
+            position: relative;
         }
+  
         .name{
-            color:white;
-            font-size:5px;
-            display:inline-block;
+            width: 100vw;
+            height:100vh;
+            background-color: green;
             
         }
         
@@ -47,41 +38,18 @@
 </head>
 <body>
     <div class="main">
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
-       <div class = "two">
-        <p class = "name">code by sankar</p>
-        <p class = "name"> sambhu Sankar</p>
-       </div>
+        <div class = "two">
+            two
+        </div>
+        <div class = "name">
+            name
+        </div>
     </div>
     <script>
-     
-        const two = document.getElementsByClassName("two")[0]
-        const name = document.getElementsByClassName("name")[0]
-       document.addEventListener("wheel", (e)=>{
-
-         window.scrollTo(0, e.deltaY)
-       })
-       
-       
+     const two = document.getElementsByClassName("two")[0]
+     const name = document.getElementsByClassName("name")[0]
+     const pos = name.getBoundingClientRect()
+     console.log(pos.top + window.scrollY)
       
     </script>
 </body>

@@ -6,7 +6,6 @@ function Hero(){
     const big_name = useRef(null)
     useEffect(() => {
         document.addEventListener('wheel', (e) => {
-            console.log(e)
             if (e.deltaY < 0){
                 big_name.current.style.animationDirection = "reverse";
             }
@@ -15,8 +14,15 @@ function Hero(){
                 big_name.current.style.animationDirection = "normal";
               }
         })
-    }
-    )
+        document.addEventListener("keydown", (e) => {
+            if(e.key == "ArrowUp"){
+                big_name.current.style.animationDirection = "reverse";
+            }
+            if(e.key == "ArrowDown"){
+                big_name.current.style.animationDirection = "normal";
+            }
+        })
+    })
     return (
         <div className = "hero-page" >
             <div className = "location">

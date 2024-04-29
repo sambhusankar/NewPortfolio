@@ -1,0 +1,30 @@
+.socials h5{
+    color:grey;
+    font-size: 10px;
+}
+.socials ul{
+    display: flex;
+    list-style: none;
+    position: relative;
+}
+.socials a{
+    margin:10px;
+    color:white;
+    cursor: pointer;
+    position: relative;
+    
+}
+.socials a::after{
+    content: "";
+    position: absolute;
+    bottom:-5px;
+    left:0;
+    background-color:white;
+    height:1px;
+    width:100%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+.socials a:hover::after{
+    transform: scale(100%);
+}

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import './sidebar.css' 
 import Magnetic from "../../Animations/magnetic"
+import Socials from "../Socials/socials"
 function Sidebar({isopen}){
     const Ref = useRef(null)
     const overlay = document.createElement("div")
@@ -30,11 +31,15 @@ function Sidebar({isopen}){
     //making light dark to the main body on sidebar open and opening sidebar
     useEffect(() => {
         if(isopen){
+            Ref.current.style.width = "500px"
+            Ref.current.classList.add("animate")
             Ref.current.style.right = "0vw"
             document.body.style.overflow = "hidden"
             document.body.appendChild(overlay)
         }
         else{
+            Ref.current.style.width = "400px"
+            Ref.current.classList.remove("animate")
             Ref.current.style.right = "-500px"
             document.body.style.overflowY = "scroll"
             const existing_overlay = document.querySelector(".overlay")
@@ -80,15 +85,9 @@ function Sidebar({isopen}){
                     <Link className = "Links" to = "/contact">Contact</Link>
                 </li>
             </ul>
-
-            <h5>SOCIALS</h5>
-            <div>
-                <a className = "a " href = "https://in.linkedin.com/in/s-sankar-swain-b9821a270">Linkedin</a>
-                <a className = "a " href = "https://twitter.com/sankar_sw">Twitter</a>
-                <a className = "a " href = "https://github.com/sambhusankar">Github</a>
-                <a className = "a " href = "https://wa.link/igftyr">Whatsapp</a>
+            <div className="social-div">
+            <Socials />
             </div>
-
         </div>
     )
 }

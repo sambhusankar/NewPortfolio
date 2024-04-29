@@ -2,10 +2,20 @@ import React, { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./nav.css"
 import Sidebar from '../Sidebar/sidebar'
+import Magnetic from '../../Animations/magnetic';
 
-function Nav(){
+function Nav(color){
     const navRef = useRef(null);
     const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    //setting the text color in different components
+    useEffect(() => {
+        for(let i = 0; i < navRef.current.children.length; i++){
+       navRef.current.children[i].style.color = color.color
+
+        }
+    }, [])
+    ;
    //copyright rotation and logo text change
     useEffect(() => {
         const logo = navRef.current.querySelector(".logo");
@@ -56,10 +66,10 @@ function Nav(){
         const side_bar = navRef.current.querySelector(".side-bar");
         document.addEventListener("scroll", () => {
         if(window.scrollY > 60){
-            side_bar.style.opacity = "1"
+            side_bar.style.transform = "scale(100%)"
         }
         else{
-            side_bar.style.opacity = "0"
+            side_bar.style.transform = "scale(0%)"
         }
    }, [window.scrollY])
     
@@ -79,11 +89,12 @@ function Nav(){
    //showing the side-bar button in small screens 
    useEffect(() => {
     const side_bar = navRef.current.querySelector(".side-bar")
+    Magnetic(side_bar)
     if(document.body.offsetWidth <= 500 && sidebarOpen == true){
-        side_bar.style.opacity = "1"
+        side_bar.style.transform = "scale(100%)"
        }
     else if(window.scrollY == 0 && sidebarOpen == false){
-        side_bar.style.opacity = "0"
+        side_bar.style.transform = "scale(0)"
     }
 
    }, [ sidebarOpen ])
@@ -94,11 +105,11 @@ function Nav(){
         <div className= "navbar" ref = {navRef}>
             <Link to = "/" className="logo shakable" >
                 <p className='copyright'>©</p>
-               <p className = "logo-text"> <span>Code by Sankar</span> <span>Sambhu Sankar</span>  </p>
+               <p className = "logo-text" > <span>Code by Sankar</span> <span>Sambhu Sankar</span>  </p>
             </Link>
 
             <button className = "menu shakable" onClick = {handleSidebar}>● Menu</button>
-            <button className = "side-bar shakable" onClick = {handleSidebar}>
+            <button className = "side-bar" onClick = {handleSidebar}>
                 <p className = "side-bar-text">───</p>
                 <p className = "side-bar-text">───</p>
             </button>
