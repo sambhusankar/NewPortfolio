@@ -1,2 +1,2 @@
 # New Portfolio Website
-using #Vite & #React.js
+# using Vite & React.js
