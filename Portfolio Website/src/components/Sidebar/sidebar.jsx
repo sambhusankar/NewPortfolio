@@ -61,13 +61,9 @@ function Sidebar({isopen}){
         element.addEventListener("mouseout", () => {
             element.style.transform = "";
         })
-<<<<<<< HEAD
     }, []);
 
     
-=======
-    }, [])
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 
     return(
         <div className = "sidebar-page" ref = { Ref }>

@@ -71,13 +71,9 @@
     height:100%;
     width:100%;   
 }
-<<<<<<< HEAD
 .about-page .works{
     margin-top: 50px;
 }
-=======
-
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 
 .works hr{
     width: 92vw;
@@ -148,23 +144,15 @@
     position: relative;
     right:20vw;
     transition: right 1s ease;
-<<<<<<< HEAD
     z-index:9;
-=======
-    z-index:10;
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .right-scroll{
     right:17vw;
 }
-<<<<<<< HEAD
 .auto-scroll-imgs{
     width:400px;
     height:300px;
 }
-=======
-
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 .about-page .project-img{
     height:300px;
     width:300px;
@@ -174,7 +162,6 @@
     top:0;
     transform: translate(-50%, -50%);
     transform: scale(0%);
-<<<<<<< HEAD
     transition: transform 0.5s, left 1s, top 1s;
     pointer-events:none;
     background-color: black;
@@ -182,15 +169,6 @@
     cursor: pointer;
 }
 .about-page .view-project{
-=======
-    transition: transform 0.5s, left 0.1s, top 0.1s;
-    pointer-events:none;
-    background-color: black;
-    z-index:2;
-    cursor: pointer;
-}
-.about-page .project-img .view-project{
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     height:80px;
     width:80px;
     background-color: rgb(3, 121, 181);
@@ -198,7 +176,6 @@
     text-align: center;
     padding-top:25px;
     border-radius: 50%;
-<<<<<<< HEAD
     position: fixed;
     top:0;
     left:0;
@@ -208,13 +185,6 @@
     z-index:11;
     transform: scale(0);
     transition: transform 0.5s, left 1s, top 1s;
-=======
-    position: absolute;
-    bottom:100px;
-    left:100px;
-    cursor: pointer;
-    z-index:50;
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .about-page .project-img .live-projects{  
     width:100%;
@@ -263,18 +233,4 @@
         border-top-width: 60px;
         border-bottom-width: 60px;
      }
-<<<<<<< HEAD
-
-=======
-     .project-small-screen .view-project{
-        height:80px;
-        width:80px;
-        border-radius: 50%;
-        text-align: center;
-        padding-top: 25px;
-        background-color: rgb(0, 98, 255);
-        color:white;
-        
-     }
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }

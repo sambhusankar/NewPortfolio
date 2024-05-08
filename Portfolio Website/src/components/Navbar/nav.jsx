@@ -97,7 +97,6 @@ function Nav(color){
         side_bar.style.transform = "scale(0)"
     }
 
-<<<<<<< HEAD
    }, [ sidebarOpen ]);
 
    useEffect(() => {
@@ -109,11 +108,6 @@ function Nav(color){
     })
 }
 }, [ sidebarOpen ]);
-=======
-   }, [ sidebarOpen ])
-
-  
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 
     return(
         <div className= "navbar" ref = {navRef}>

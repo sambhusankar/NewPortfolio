@@ -5,7 +5,6 @@
     background-color: white;
     position: relative;
 }
-<<<<<<< HEAD
 .Work-Page{
     position: relative;
 }
@@ -25,8 +24,6 @@
     height:0;
     bottom:0px;
 }
-=======
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 .Work-Page .heading{
     font-size:6vw;
     width:60vw;
@@ -61,12 +58,8 @@
 .work-table{
     width:80vw;
     margin:60px auto;
-<<<<<<< HEAD
     position: relative;
     z-index: 6;
-=======
-   
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .work-table tr{
     border-bottom: 1px solid rgb(170, 168, 168);
@@ -75,10 +68,7 @@
     justify-content: space-between;
     align-items: center;
     padding:0 10%;
-<<<<<<< HEAD
     
-=======
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .work-table tr:hover{
     color:rgb(144, 143, 143);
@@ -101,7 +91,6 @@
     top:0;
     left:0;
     transform: scale(0);
-<<<<<<< HEAD
     z-index: 10;
     transition: transform 0.5s, top 1s, left 1s;
     pointer-events: none;
@@ -116,22 +105,11 @@
     cursor: pointer;
 }
 .Work-Page .view-project{
-=======
-    transition: transform 0.5s ease;
-    transition: top 0.5s, left 0.5s;
-}
-.Work-Page .project-img .live-projects{ 
-    width:100%;
-    border:30px solid grey;
-}
-.Work-Page .project-img .view-project{
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     color:white;
     height:80px;
     width:80px;
     border-radius: 50%;
     background-color: rgb(0, 110, 255);
-<<<<<<< HEAD
     position: fixed;
     top:0;
     left:0;
@@ -171,11 +149,3 @@
         
      }
 }
-=======
-    position: absolute;
-    text-align: center;
-    padding: 25px;
-}.Work-Page .project-small-screen{
-    display: none;
-}
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
