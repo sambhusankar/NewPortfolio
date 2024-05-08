@@ -8,7 +8,11 @@
     right:-500px;
     padding:7%;
     transition: right 1s ease ;
+<<<<<<< HEAD
     z-index:10;
+=======
+
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .sidebar-page::after{
     content: "";
@@ -50,7 +54,10 @@
     height:100%;
     width:100%;
     background-color: rgba(0, 0, 0, 0.5);
+<<<<<<< HEAD
     z-index:9;
+=======
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 }
 .remove-overlay{
     background-color: transparent;

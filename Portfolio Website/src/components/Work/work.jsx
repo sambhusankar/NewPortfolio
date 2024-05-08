@@ -23,6 +23,7 @@ function Work(){
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("tr")
         const box = Ref.current.querySelector(".project-img")
+<<<<<<< HEAD
         const btn = Ref.current.querySelector(".view-project")
         for(let i = 1; i < projects.length; i++){
             projects[i].addEventListener("mouseover", (e) => {
@@ -81,6 +82,20 @@ function Work(){
         })
     }, []);
 
+=======
+        for(let i = 1; i < projects.length; i++){
+            projects[i].addEventListener("mouseover", (e) => {
+                
+                box.style.transform = "scale(100%)"
+                box.style.left = e.clientX -125 + "px"
+                box.style.top = e.clientY -125  + "px"
+            })
+            projects[i].addEventListener("mouseout", (e) => {
+                box.style.transform = "scale(0)"
+            })
+        }
+    }, []);
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     return(
         
         <div className="Work-Page-Container" ref = {Ref}>  
@@ -136,6 +151,7 @@ function Work(){
                         <td>2024</td>
                     </tr>
                 </table>
+<<<<<<< HEAD
                 <a href="https://www.google.com" className = "view-project">View</a>
                 <div className="project-img">
                 
@@ -184,6 +200,28 @@ function Work(){
                 </div>
         
 
+=======
+                <div className="project-img">
+                <a href="https://www.google.com" className = "view-project">View</a>
+                <img src = "portfolio.png" className="live-projects"></img>
+                <img src = "todo.png" className="live-projects"></img>
+                <img src = "triplespdf.png" className="live-projects"></img>
+                <img src = "tictactoe.png" className="live-projects"></img>
+                 
+            </div>
+            <div className = "project-small-screen">
+            <a href="https://www.google.com" className = "view-project">View</a>
+                <div>
+                    <img src = "portfolio.png"></img>
+                    <h2>Old Portfolio Website</h2>
+                </div>
+                <hr></hr>
+                <div>
+                    <img src = "todo.png"></img>
+                    <h2>Todo App</h2>
+                </div>
+                <hr></hr>
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
             </div>
             </div>
             <Contact />

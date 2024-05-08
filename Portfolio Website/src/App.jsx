@@ -11,9 +11,11 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 function App() {
   const location = useLocation()
+
   useEffect(() => {
     document.body.style.overflow = "hidden"
-  }, [])
+  }, []);
+
     document.addEventListener("keydown", (e) => {
       e.preventDefault()
       if(e.key == "ArrowDown"){

@@ -23,9 +23,15 @@ function About(){
         const element = Ref.current.querySelector(".aboutme-bubble")
         Magnetic(element)
         
+<<<<<<< HEAD
     }, []);
 
     //left and right srolling of works and animating
+=======
+    }, [])
+
+    //left and right srolling of works
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     useEffect(() => {
         const left_scroll = Ref.current.querySelector(".left-scroll")
         const right_scroll = Ref.current.querySelector(".right-scroll")
@@ -53,9 +59,15 @@ function About(){
                 right_scroll.style.right = "19vw"
             }
         })
+<<<<<<< HEAD
     }, []);
 
     //showing the image of project on mouse hover and moving with cursor
+=======
+    }, [])
+
+    //showing the image of project on mouse hover
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("li")
         const box = Ref.current.querySelector(".project-img")
@@ -64,19 +76,31 @@ function About(){
         projects.forEach((project) => {
             
             project.addEventListener("mouseover", (e) => {
+<<<<<<< HEAD
                 btn.style.transform = "scale(100%)"
+=======
+                
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
                 box.style.transform = "scale(100%)"
                 const x = e.clientX - 125
                 const y = e.clientY - 125
             
                 box.style.left  = `${x}px`
                 box.style.top = `${y}px`
+<<<<<<< HEAD
                 btn.style.left = e.clientX - 20 + "px"
                 btn.style.top = e.clientY - 20 + "px"
             });
             project.addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0%)"
                 btn.style.transform = "scale(0%)"
+=======
+           
+                
+            });
+            project.addEventListener("mouseout", (e) => {
+                box.style.transform = "scale(0%)"
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
             })
            
         })
@@ -107,6 +131,7 @@ function About(){
             })
         
         })
+<<<<<<< HEAD
     },[]);
 
     //in small screens showing a button to view project
@@ -122,6 +147,10 @@ function About(){
             btn.style.transform = "scale(0%)"
         })
     }, []);
+=======
+    },[])
+
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
 
     return(
         <div className = "about-page" ref = {Ref}>
@@ -155,9 +184,14 @@ function About(){
                 </li>
                 <hr />
             </ul>
+<<<<<<< HEAD
             <a className = "view-project" href = "https://github.com/sambhusankar">View</a>
             <div className="project-img">
                 
+=======
+            <div className="project-img">
+                <a href="https://www.google.com" className = "view-project">View</a>
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
                 <img src = "portfolio.png" className="live-projects"></img>
                 <img src = "todo.png" className="live-projects"></img>
                 <img src = "triplespdf.png" className="live-projects"></img>
@@ -165,7 +199,11 @@ function About(){
                  
             </div>
             <div className = "project-small-screen">
+<<<<<<< HEAD
             
+=======
+            <a href="https://www.google.com" className = "view-project">View</a>
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
                 <div>
                     <img src = "portfolio.png"></img>
                     <h2>Old Portfolio Website</h2>
@@ -180,6 +218,7 @@ function About(){
             <div className="more-work">
             <Link to = "/work" className="more-work-btn shakable"><span>More work</span></Link>
             <div className="left-scroll">
+<<<<<<< HEAD
                 <img src = "triplespdf.png" className="auto-scroll-imgs"></img>
                 <video className="auto-scroll-imgs" autoPlay muted loop>
                     <source src = "tictactoe-vid.mp4" type = "video/mp4"></source>
@@ -198,6 +237,18 @@ function About(){
                     <source src = "portfolio-vid.mp4" type = "video/mp4"></source>
                 </video>
                 <img src = "userauth.png" className="auto-scroll-imgs"></img>
+=======
+                <img src = "https://picsum.photos/id/237/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/238/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/236/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/234/300/200" className="auto-scroll-imgs"></img>
+            </div>
+            <div className="right-scroll">
+                <img src = "https://picsum.photos/id/238/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/236/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/234/300/200" className="auto-scroll-imgs"></img>
+                <img src = "https://picsum.photos/id/237/300/200" className="auto-scroll-imgs"></img>
+>>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
             </div>
             </div>
             
