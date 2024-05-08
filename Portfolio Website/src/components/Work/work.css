@@ -5,6 +5,25 @@
     background-color: white;
     position: relative;
 }
+.Work-Page{
+    position: relative;
+}
+.Work-Page::after{
+    content: "";
+    width:100vw;
+    height:20vh;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    background-color: white;
+    position: absolute;
+    left:0;
+    bottom:-20vh;
+    z-index: 5;
+    transition: height 1s, bottom 1s;
+}
+.animate::after{
+    height:0;
+    bottom:0px;
+}
 .Work-Page .heading{
     font-size:6vw;
     width:60vw;
@@ -39,7 +58,8 @@
 .work-table{
     width:80vw;
     margin:60px auto;
-   
+    position: relative;
+    z-index: 6;
 }
 .work-table tr{
     border-bottom: 1px solid rgb(170, 168, 168);
@@ -48,6 +68,7 @@
     justify-content: space-between;
     align-items: center;
     padding:0 10%;
+    
 }
 .work-table tr:hover{
     color:rgb(144, 143, 143);
@@ -70,22 +91,61 @@
     top:0;
     left:0;
     transform: scale(0);
-    transition: transform 0.5s ease;
-    transition: top 0.5s, left 0.5s;
+    z-index: 10;
+    transition: transform 0.5s, top 1s, left 1s;
+    pointer-events: none;
+    cursor: pointer;
 }
 .Work-Page .project-img .live-projects{ 
     width:100%;
-    border:30px solid grey;
+    height:100%;
+    border:20px solid grey;
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    cursor: pointer;
 }
-.Work-Page .project-img .view-project{
+.Work-Page .view-project{
     color:white;
     height:80px;
     width:80px;
     border-radius: 50%;
     background-color: rgb(0, 110, 255);
-    position: absolute;
+    position: fixed;
+    top:0;
+    left:0;
     text-align: center;
     padding: 25px;
-}.Work-Page .project-small-screen{
+    pointer-events: none;
+    z-index:11;
+    transform: scale(0);
+    transition: transform 0.5s, left 1s, top 1s;
+}
+.Work-Page .project-small-screen{
     display: none;
+   
+}
+
+
+@media screen and (max-width:1040px){
+    .Work-Page-Container .Work-Page .work-table{
+        display: none;       
+    }
+    .Work-Page .project-small-screen{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 4vw;
+        box-sizing: content-box;
+        position: relative;
+        z-index: 11;
+        width:max-content;
+        margin: auto;
+    }
+    .project-small-screen div img{
+        width: 40vw;
+        height:40vw;
+        border:30px solid rgb(63, 64, 47);
+        border-top-width: 3vw;
+        border-bottom-width: 3vw;
+        
+     }
 }

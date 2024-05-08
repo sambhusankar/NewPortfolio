@@ -97,9 +97,17 @@ function Nav(color){
         side_bar.style.transform = "scale(0)"
     }
 
-   }, [ sidebarOpen ])
+   }, [ sidebarOpen ]);
 
-  
+   useEffect(() => {
+        
+    const element = document.querySelector(".overlay")
+    if(element){
+    element.addEventListener("click", () => {
+       handleSidebar()
+    })
+}
+}, [ sidebarOpen ]);
 
     return(
         <div className= "navbar" ref = {navRef}>

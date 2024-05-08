@@ -23,9 +23,9 @@ function About(){
         const element = Ref.current.querySelector(".aboutme-bubble")
         Magnetic(element)
         
-    }, [])
+    }, []);
 
-    //left and right srolling of works
+    //left and right srolling of works and animating
     useEffect(() => {
         const left_scroll = Ref.current.querySelector(".left-scroll")
         const right_scroll = Ref.current.querySelector(".right-scroll")
@@ -53,9 +53,9 @@ function About(){
                 right_scroll.style.right = "19vw"
             }
         })
-    }, [])
+    }, []);
 
-    //showing the image of project on mouse hover
+    //showing the image of project on mouse hover and moving with cursor
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("li")
         const box = Ref.current.querySelector(".project-img")
@@ -64,18 +64,19 @@ function About(){
         projects.forEach((project) => {
             
             project.addEventListener("mouseover", (e) => {
-                
+                btn.style.transform = "scale(100%)"
                 box.style.transform = "scale(100%)"
                 const x = e.clientX - 125
                 const y = e.clientY - 125
             
                 box.style.left  = `${x}px`
                 box.style.top = `${y}px`
-           
-                
+                btn.style.left = e.clientX - 20 + "px"
+                btn.style.top = e.clientY - 20 + "px"
             });
             project.addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0%)"
+                btn.style.transform = "scale(0%)"
             })
            
         })
@@ -106,8 +107,21 @@ function About(){
             })
         
         })
-    },[])
+    },[]);
 
+    //in small screens showing a button to view project
+    useEffect(() => {
+        const box = Ref.current.querySelector(".project-small-screen");
+        const btn = Ref.current.querySelector(".view-project");
+        box.addEventListener("mouseover", (e) => {
+            btn.style.transform = "scale(100%)"
+            btn.style.top = e.clientY + "px"
+            btn.style.left = e.clientX + "px"
+        })
+        box.addEventListener("mouseout", () => {
+            btn.style.transform = "scale(0%)"
+        })
+    }, []);
 
     return(
         <div className = "about-page" ref = {Ref}>
@@ -141,8 +155,9 @@ function About(){
                 </li>
                 <hr />
             </ul>
+            <a className = "view-project" href = "https://github.com/sambhusankar">View</a>
             <div className="project-img">
-                <a href="https://www.google.com" className = "view-project">View</a>
+                
                 <img src = "portfolio.png" className="live-projects"></img>
                 <img src = "todo.png" className="live-projects"></img>
                 <img src = "triplespdf.png" className="live-projects"></img>
@@ -150,7 +165,7 @@ function About(){
                  
             </div>
             <div className = "project-small-screen">
-            <a href="https://www.google.com" className = "view-project">View</a>
+            
                 <div>
                     <img src = "portfolio.png"></img>
                     <h2>Old Portfolio Website</h2>
@@ -165,16 +180,24 @@ function About(){
             <div className="more-work">
             <Link to = "/work" className="more-work-btn shakable"><span>More work</span></Link>
             <div className="left-scroll">
-                <img src = "https://picsum.photos/id/237/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/238/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/236/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/234/300/200" className="auto-scroll-imgs"></img>
+                <img src = "triplespdf.png" className="auto-scroll-imgs"></img>
+                <video className="auto-scroll-imgs" autoPlay muted loop>
+                    <source src = "tictactoe-vid.mp4" type = "video/mp4"></source>
+                </video>
+                <video className="auto-scroll-imgs" autoPlay muted loop>
+                    <source src = "clock-vid.mp4" type = "video/mp4"></source>
+                </video>
+                <img src = "calculator.png" className="auto-scroll-imgs"></img>
             </div>
             <div className="right-scroll">
-                <img src = "https://picsum.photos/id/238/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/236/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/234/300/200" className="auto-scroll-imgs"></img>
-                <img src = "https://picsum.photos/id/237/300/200" className="auto-scroll-imgs"></img>
+            <video className="auto-scroll-imgs" autoPlay muted loop>
+                    <source src = "todo-vid.mp4" type = "video/mp4"></source>
+                </video>
+                <img src = "storybook.png" className="auto-scroll-imgs"></img>
+                <video className="auto-scroll-imgs" autoPlay muted loop>
+                    <source src = "portfolio-vid.mp4" type = "video/mp4"></source>
+                </video>
+                <img src = "userauth.png" className="auto-scroll-imgs"></img>
             </div>
             </div>
             

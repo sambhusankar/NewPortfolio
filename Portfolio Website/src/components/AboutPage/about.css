@@ -1,0 +1,29 @@
+.About-page-container{
+    width:100vw;
+    overflow:hidden;
+}
+.About-page{
+    padding:100px 0;
+}
+.About-page .heading{
+    font-size: 6vw;
+    word-wrap: break-word;
+    width:60vw;
+    margin-left: 90px;
+}
+.txt-photo{
+    display:flex;
+    
+}
+.txt-photo img{
+    width:54vw;
+}
+.helping-section{
+    display: flex;
+    margin:250px 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(203,229,235,1) 100%, rgba(226,226,226,1) 100%)
+}
+.helping-section h2{
+    position: absolute;
+}

@@ -23,18 +23,64 @@ function Work(){
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("tr")
         const box = Ref.current.querySelector(".project-img")
+        const btn = Ref.current.querySelector(".view-project")
         for(let i = 1; i < projects.length; i++){
             projects[i].addEventListener("mouseover", (e) => {
-                
+                btn.style.transform = 'scale(100%)'
                 box.style.transform = "scale(100%)"
                 box.style.left = e.clientX -125 + "px"
                 box.style.top = e.clientY -125  + "px"
+                btn.style.left = e.clientX  + "px"
+                btn.style.top = e.clientY  + "px"
+                
             })
             projects[i].addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0)"
+                btn.style.transform = "scale(0)"
             })
         }
     }, []);
+
+     //scrolling the projects on mousemove
+     useEffect(() => {
+        const projects = Ref.current.querySelectorAll("tr");
+        const box = Ref.current.querySelector(".project-img");
+        const live_project = Ref.current.querySelectorAll(".live-projects");
+        const scrolls = [["Weather Forecast",0],["Todo App",300],["Story Book",600],["Calculator",900], ["Currency Convertor", 1200], ["Digital Clock", 1500]]
+        const colors = ["#383737", "#d5eded", "#405959", "#d7dbdb", "#d5eded", "#405959"]
+        projects.forEach((project) => {
+           
+            project.addEventListener("mouseover", (e) =>{
+                const item = e.target.firstElementChild.innerText;
+
+                 for(let i = 0; i < 6; i++){  
+                    live_project[i].style.borderColor = colors[i]          
+                    if(item == scrolls[i][0]){                      
+                        box.scrollTo({
+                            top:scrolls[i][1],
+                            behavior:"smooth"
+                        })
+                    }
+            }
+            })
+        
+        })
+    },[]);
+
+    //animating the page 
+    useEffect(() => {
+        const element = Ref.current.querySelector(".Work-Page")
+        document.body.addEventListener("wheel", (e) => {
+           
+            if( e.deltaY < 0){
+                element.classList.remove("animate")
+            }
+            if( e.deltaY > 0){
+                element.classList.add("animate")
+            }
+        })
+    }, []);
+
     return(
         
         <div className="Work-Page-Container" ref = {Ref}>  
@@ -90,26 +136,54 @@ function Work(){
                         <td>2024</td>
                     </tr>
                 </table>
-                <div className="project-img">
                 <a href="https://www.google.com" className = "view-project">View</a>
-                <img src = "portfolio.png" className="live-projects"></img>
+                <div className="project-img">
+                
+                <img src = "weather.png" className="live-projects"></img>
                 <img src = "todo.png" className="live-projects"></img>
-                <img src = "triplespdf.png" className="live-projects"></img>
-                <img src = "tictactoe.png" className="live-projects"></img>
-                 
+                <img src = "storybook.png" className="live-projects"></img>
+                <img src = "calculator.png" className="live-projects"></img>
+                <img src = "currency.png" className="live-projects"></img>
+                <img src = "clock.png" className="live-projects"></img>
+                <img src = "weather.png" className="live-projects"></img>
             </div>
             <div className = "project-small-screen">
-            <a href="https://www.google.com" className = "view-project">View</a>
                 <div>
-                    <img src = "portfolio.png"></img>
-                    <h2>Old Portfolio Website</h2>
+                    <img src = "weather.png"></img>
+                    <h2>Weather Forecast</h2>
+                    <hr></hr>
                 </div>
-                <hr></hr>
+               
                 <div>
                     <img src = "todo.png"></img>
                     <h2>Todo App</h2>
+                    <hr></hr>
                 </div>
-                <hr></hr>
+               
+                <div>
+                    <img src = "storybook.png"></img>
+                    <h2>Story Book</h2>
+                    <hr></hr>
+                </div>
+               
+                <div>
+                    <img src = "calculator.png"></img>
+                    <h2>Calculator</h2>
+                    <hr></hr>
+                </div>
+           
+                <div>
+                    <img src = "currency.png"></img>
+                    <h2>Currency Converter</h2>
+                    <hr></hr>
+                </div>
+                <div>
+                    <img src = "clock.png"></img>
+                    <h2>Digital Clock</h2>
+                    <hr></hr>
+                </div>
+        
+
             </div>
             </div>
             <Contact />
