@@ -9,7 +9,11 @@ function Home(){
     const hello = ["• Hello", "• नमस्ते", "• வணக்கம்", "• ନମସ୍କାର", "• ನಮಸ್ಕಾರ", "• नमस्ते"]
     const [lang, setLang] = useState('')
     const [index, setIndex] = useState(0)
-
+    //setting the page title dynamically
+    useEffect(() => {
+        document.title = "Sambhu Sankar Swain"
+    }, []);
+  //loading page animation
     useEffect(() => {
       if (index < hello.length ){
         setTimeout(() => {

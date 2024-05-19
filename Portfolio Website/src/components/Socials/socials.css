@@ -6,6 +6,7 @@
     display: flex;
     list-style: none;
     position: relative;
+    flex-wrap: wrap;
 }
 .socials a{
     margin:10px;

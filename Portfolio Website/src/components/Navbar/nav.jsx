@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import "./nav.css"
 import Sidebar from '../Sidebar/sidebar'
 import Magnetic from '../../Animations/magnetic';
+import "../../Animations/hover-effect.css"
 
 function Nav(color){
     const navRef = useRef(null);
@@ -117,7 +118,7 @@ function Nav(color){
             </Link>
 
             <button className = "menu shakable" onClick = {handleSidebar}>● Menu</button>
-            <button className = "side-bar" onClick = {handleSidebar}>
+            <button className = "side-bar hover-effect" onClick = {handleSidebar}>
                 <p className = "side-bar-text">───</p>
                 <p className = "side-bar-text">───</p>
             </button>

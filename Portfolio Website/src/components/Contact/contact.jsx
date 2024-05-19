@@ -44,8 +44,8 @@ function Contact(){
                 <Link to = "/contact" className="btn hover-effect"><span>Get in touch</span></Link>
             </div>
                 <div className = "mail-num">
-                    <div className="hover-effect"><a href = "mailto:sambhusankarswain@gmail.com">sambhusankarswain@gmail.com</a></div>
-                    <div className="hover-effect"><a href = "tel:8238187630">+91 8238187630</a></div>
+                    <div className="hover-effect-25"><a href = "mailto:sambhusankarswain@gmail.com">sambhusankarswain@gmail.com</a></div>
+                    <div className="hover-effect-25"><a href = "tel:8238187630">+91 8238187630</a></div>
                 </div>
                 <div></div>
            

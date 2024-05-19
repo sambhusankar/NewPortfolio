@@ -11,7 +11,7 @@ function Footer(){
         setHour(date.getHours())
         setMinute(date.getMinutes())
         setMerediem(hour < 12 ? "AM" : "PM")
-    }, [])
+    }, [hour, minute, merediem])
 
     return(
         <footer className="footer">

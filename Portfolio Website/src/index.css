@@ -22,15 +22,11 @@ a {
 
 body {
   margin: 0;
+  padding:0;
   display: flex;
-  place-items: center;
-<<<<<<< HEAD
-=======
-  min-width: 320px;
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
   min-height: 100vh;
-  overflow:hidden;
-  
+  overflow-y:scroll;
+  background-color:#242424 ;
 }
 
 h1 {

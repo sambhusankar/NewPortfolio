@@ -16,9 +16,14 @@ function Work(){
      
     //magnetic effect to buttons
     useEffect(() => {
-        const elements = Ref.current.querySelectorAll("button")
-        Magnetic(elements[0])
-    }, [])
+        const grid_view = Ref.current.querySelector(".grid-view")
+        const row_view = Ref.current.querySelector(".row-view")
+        const heading = Ref.current.querySelector("h2")
+        Magnetic(grid_view)
+        Magnetic(row_view)
+        Magnetic(heading)
+    }, []);
+
     //showing the live projects on hover
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("tr")
@@ -51,8 +56,9 @@ function Work(){
         projects.forEach((project) => {
            
             project.addEventListener("mouseover", (e) =>{
+                
                 const item = e.target.firstElementChild.innerText;
-
+        
                  for(let i = 0; i < 6; i++){  
                     live_project[i].style.borderColor = colors[i]          
                     if(item == scrolls[i][0]){                      
@@ -62,6 +68,7 @@ function Work(){
                         })
                     }
             }
+                
             })
         
         })
@@ -80,6 +87,23 @@ function Work(){
             }
         })
     }, []);
+    //handling the row and grid view buttons
+    function handleWorkView(e){
+        const row = Ref.current.querySelector(".work-table")
+        const grid = Ref.current.querySelector(".project-small-screen")
+        const row_view = Ref.current.querySelector(".row-view")
+        const grid_view = Ref.current.querySelector(".grid-view")
+        
+        if ( e.target == row_view){
+            row.style.display = "inherit"
+            grid.style.display = "none"
+            
+        }
+        else if( e.target == grid_view){
+            row.style.display = "none"
+            grid.classList.add("gridclick")
+        }
+    };
 
     return(
         
@@ -91,8 +115,8 @@ function Work(){
                 </h1>
                 <div className = "display-row">
                     <h2>PRODUCTS  ⇲</h2>
-                    <button><i class="fa-solid fa-diagram-predecessor"></i></button>
-                    <button><i class="fa-solid fa-table-cells-large"></i></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="row-view fa-solid fa-diagram-predecessor"></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="grid-view fa-solid fa-table-cells-large"></button>
                 </div>
                 <table className="work-table">
                     <tr>

@@ -55,7 +55,10 @@
 .remove-overlay{
     background-color: transparent;
 }
-
+.social-div{
+    position: absolute;
+    width: 100%;
+}
 @media screen and (max-width:500px) {
     .sidebar-page{
         width:100vw;

@@ -50,27 +50,7 @@
     cursor: pointer;
     z-index: 1;
 }
-.aboutme-bubble span{
-    z-index: 2;
-    font-size: 92%;
-}
- 
-.aboutme-bubble::before{
-    content: "";
-    height:0;
-    width:0;
-    border-radius: 50%;
-    background-color: rgb(37, 127, 191);
-    position: absolute;
-    top:0;
-    left:0;
-    transition: height 0.5s, width 0.5s;
-  
-}
-.aboutme-bubble:hover::before{
-    height:100%;
-    width:100%;   
-}
+
 .about-page .works{
     margin-top: 50px;
 }
@@ -120,21 +100,7 @@
 .more-work-btn:hover{
     color:black;
 }
-.more-work-btn::before{
-    content: "";
-    height:0;
-    width:0;
-    position: absolute;
-    top: 0;
-    left:0;
-    background-color: rgb(37, 127, 191);
-    border-radius: 25px;
-    transition: height 0.5s, width 0.5s;
-}
-.more-work-btn:hover::before{
-    height:100%;
-    width:100%;
-}
+
 .left-scroll, .right-scroll{
     display: flex;
     margin:20px 0;

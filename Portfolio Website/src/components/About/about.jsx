@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Magnetic from "../../Animations/magnetic"
 import "../../Animations/Shakable.css"
+import "../../Animations/hover-effect.css"
 import "./about.css"
 function About(){
     const Ref = useRef(null)
@@ -29,25 +30,27 @@ function About(){
     useEffect(() => {
         const left_scroll = Ref.current.querySelector(".left-scroll")
         const right_scroll = Ref.current.querySelector(".right-scroll")
+        const pos = left_scroll.getBoundingClientRect()
+        console.log(pos)
         document.body.addEventListener("wheel", (e) => {
-            if(e.deltaY < 0){
+            if(e.deltaY < 0 && pos.top >= 0 ){
                 Ref.current.classList.remove("animate")
                 left_scroll.style.right = "22vw"
                 right_scroll.style.right = "15vw"
             }
-            if(e.deltaY > 0){
+            if(e.deltaY > 0 && pos.top >= 0 ){
                 Ref.current.classList.add("animate")
                 left_scroll.style.right = "18vw"
                 right_scroll.style.right = "19vw"
             }
         })
         document.addEventListener("keydown", (e) => {
-            if(e.key == "ArrowUp"){
+            if(e.key == "ArrowUp" && pos.top >= 0 ){
                 Ref.current.classList.remove("animate")
                 left_scroll.style.right = "22vw"
                 right_scroll.style.right = "15vw"
             }
-            if(e.key == "ArrowDown"){
+            if(e.key == "ArrowDown" && pos.top >= 0 ){
                 Ref.current.classList.add("animate")
                 left_scroll.style.right = "18vw"
                 right_scroll.style.right = "19vw"
@@ -129,7 +132,7 @@ function About(){
                 <p>Helping brands to standout in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.</p>
                 <p>The combination of my passion for design, code & interaction positions me in a unique place in the web development world.</p>
                 <h5>RECENT WORK</h5>
-                <Link className = "aboutme-bubble" to = "/about"><span>About me</span></Link>
+                <Link className = "aboutme-bubble hover-effect" to = "/about"><span>About me</span></Link>
             
             </div>
             <ul className="works">
@@ -178,7 +181,7 @@ function About(){
                 <hr></hr>
             </div>
             <div className="more-work">
-            <Link to = "/work" className="more-work-btn shakable"><span>More work</span></Link>
+            <Link to = "/work" className="more-work-btn shakable hover-effect-25"><span>More work</span></Link>
             <div className="left-scroll">
                 <img src = "triplespdf.png" className="auto-scroll-imgs"></img>
                 <video className="auto-scroll-imgs" autoPlay muted loop>

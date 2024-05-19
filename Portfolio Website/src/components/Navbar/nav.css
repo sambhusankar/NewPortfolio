@@ -78,22 +78,6 @@
 .sidebar_active{
     background-color: rgb(37, 127, 191);
 }
-.side-bar::before{
-    content: "";
-    position: absolute;
-    top:0;
-    left:0;
-    height:0%;
-    width:0%;
-    border-radius: 50%;
-    background-color: rgb(37, 127, 191);
-    transition: width 0.1s, height 0.1s;
-}
-.side-bar:hover::before{
-    height:100%;
-    width:100%;
-}
-
 
 .cross1{
     transform: rotate(-45deg);

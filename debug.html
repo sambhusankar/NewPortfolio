@@ -38,19 +38,28 @@
 </head>
 <body>
     <div class="main">
+        <p>BIDESI MAmu</p>
         <div class = "two">
-            two
+            
         </div>
         <div class = "name">
-            name
+            
         </div>
+        <p>sagar BALA</p>
     </div>
     <script>
-     const two = document.getElementsByClassName("two")[0]
-     const name = document.getElementsByClassName("name")[0]
-     const pos = name.getBoundingClientRect()
-     console.log(pos.top + window.scrollY)
-      
+     const main = document.getElementsByClassName("main")[0]
+     const childs = main.children
+    
+     for(let i = 0; i < childs.length; i++){
+
+     pos = childs[i].getBoundingClientRect()
+    const max = document.body.clientHeight
+    if(pos.top >= 0 && pos.top <= max){
+        console.log(childs[i])
+    }
+     
+     }
     </script>
 </body>
 </html>

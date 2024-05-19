@@ -49,11 +49,17 @@
     width:90vw;
 }
 .mail-num div{
+    height:max-content;
+    width:max-content;
     border: 1px solid grey;
     padding:20px;
     border-radius: 25px;
     cursor: pointer;
+    position: relative;
+    display: flex;
+    overflow: hidden;
 }
+
 .mail-num div a{
     color:white;
     z-index: 5;

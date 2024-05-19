@@ -4,6 +4,7 @@ import Myimage from "../../assets/portfolio_image.jpg"
 import { gsap } from "gsap"
 function Hero(){
     const big_name = useRef(null)
+    //moving the big name by page scrolling
     useEffect(() => {
         document.addEventListener('wheel', (e) => {
             if (e.deltaY < 0){
