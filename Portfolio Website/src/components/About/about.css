@@ -167,6 +167,10 @@
 @media screen and (max-width:700px) {
     .about-page{
         padding: 20px;
+        padding-bottom:230px;
+    }
+    .more-work-btn{
+        top:220px;
     }
     .about-top-section h5, .works, .left-scroll, .right-scroll{
         
@@ -192,6 +196,7 @@
         display: flex;
         flex-direction: column;
         width:100vw;
+        height:100vw;
      }
      .project-small-screen div img{
         width:92%;

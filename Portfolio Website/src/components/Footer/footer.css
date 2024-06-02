@@ -17,11 +17,7 @@
     font-size: 10px;
 } 
  
-<<<<<<< HEAD
 @media screen and (max-width:700px) {
-=======
-@media screen and (max-width:500px) {
->>>>>>> 8b42c81a4837f162360ab68602050e14df34e00d
     .footer{
         flex-direction: column-reverse;
     }

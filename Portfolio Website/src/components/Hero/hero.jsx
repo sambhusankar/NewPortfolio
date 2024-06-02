@@ -30,7 +30,7 @@ function Hero(){
                 <div className = "box">
                     <p className = "india">Located in  the India</p>
                     <div className = "atlas-container">
-                    <i className="fas fa-globe fa-bounce"></i>
+                        <i className="fas fa-globe fa-bounce"></i>
                     </div>
                 </div>
 

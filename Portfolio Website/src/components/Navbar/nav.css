@@ -66,6 +66,7 @@
     transition: transform 0.3s;
     z-index:30;
     transform : scale(0%);
+    background-color:black;
 }
 .side-bar-text{
     font-size:90%;

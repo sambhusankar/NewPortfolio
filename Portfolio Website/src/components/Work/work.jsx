@@ -46,8 +46,8 @@ function Work(){
         }
     }, []);
 
-     //scrolling the projects on mousemove
-     useEffect(() => {
+    //scrolling the projects on mousemove
+    useEffect(() => {
         const projects = Ref.current.querySelectorAll("tr");
         const box = Ref.current.querySelector(".project-img");
         const live_project = Ref.current.querySelectorAll(".live-projects");
@@ -86,7 +86,18 @@ function Work(){
                 element.classList.add("animate")
             }
         })
+
+        document.body.addEventListener("keydown", (e) => {
+
+            if(e.key == "ArrowUp"){
+                element.classList.remove("animate")
+            }
+            if(e.key == "ArrowDown"){
+                element.classList.add("animate")
+            }
+        })
     }, []);
+
     //handling the row and grid view buttons
     function handleWorkView(e){
         const row = Ref.current.querySelector(".work-table")
@@ -101,6 +112,7 @@ function Work(){
         }
         else if( e.target == grid_view){
             row.style.display = "none"
+            grid.style.display = "inherit"
             grid.classList.add("gridclick")
         }
     };
@@ -110,9 +122,7 @@ function Work(){
         <div className="Work-Page-Container" ref = {Ref}>  
             <Nav color = "black" />
             <div className="Work-Page">
-                <h1 className="heading">
-                    Creating next level digital products
-                </h1>
+                <h1 className="heading">Creating next level digital products</h1>
                 <div className = "display-row">
                     <h2>PRODUCTS  ⇲</h2>
                     <button onClick={ (e) => handleWorkView(e)} className="row-view fa-solid fa-diagram-predecessor"></button>
@@ -163,52 +173,75 @@ function Work(){
                 <a href="https://www.google.com" className = "view-project">View</a>
                 <div className="project-img">
                 
-                <img src = "weather.png" className="live-projects"></img>
-                <img src = "todo.png" className="live-projects"></img>
-                <img src = "storybook.png" className="live-projects"></img>
-                <img src = "calculator.png" className="live-projects"></img>
-                <img src = "currency.png" className="live-projects"></img>
-                <img src = "clock.png" className="live-projects"></img>
-                <img src = "weather.png" className="live-projects"></img>
-            </div>
-            <div className = "project-small-screen">
-                <div>
+                 <img src = "weather.png" className="live-projects"></img>
+                 <img src = "todo.png" className="live-projects"></img>
+                 <img src = "storybook.png" className="live-projects"></img>
+                 <img src = "calculator.png" className="live-projects"></img>
+                 <img src = "currency.png" className="live-projects"></img>
+                 <img src = "clock.png" className="live-projects"></img>
+                 <img src = "weather.png" className="live-projects"></img>
+                </div>
+            <ul className = "project-small-screen">
+                <li>
                     <img src = "weather.png"></img>
                     <h2>Weather Forecast</h2>
                     <hr></hr>
-                </div>
+                    <div>
+                        <span>Design & Development</span>
+                        <span>2024</span>
+                    </div>  
+                </li>
                
-                <div>
+                <li>
                     <img src = "todo.png"></img>
                     <h2>Todo App</h2>
                     <hr></hr>
-                </div>
+                    <div>
+                        <span>Design & Development</span>
+                        <span>2024</span>
+                    </div> 
+                </li>
                
-                <div>
+                <li>
                     <img src = "storybook.png"></img>
                     <h2>Story Book</h2>
                     <hr></hr>
-                </div>
+                    <div>
+                        <span>Development</span>
+                        <span>2024</span>
+                    </div> 
+                </li>
                
-                <div>
+                <li>
                     <img src = "calculator.png"></img>
                     <h2>Calculator</h2>
                     <hr></hr>
-                </div>
+                    <div>
+                        <span>Development</span>
+                        <span>2023</span>
+                    </div> 
+                </li>
            
-                <div>
+                <li>
                     <img src = "currency.png"></img>
                     <h2>Currency Converter</h2>
                     <hr></hr>
-                </div>
-                <div>
+                    <div>
+                        <span>Design & Development</span>
+                        <span>2024</span>
+                    </div> 
+                </li>
+                <li>
                     <img src = "clock.png"></img>
                     <h2>Digital Clock</h2>
                     <hr></hr>
-                </div>
-        
+                    <div>
+                        <span>Design & Development</span>
+                        <span>2023</span>
+                    </div> 
+                </li>
+            </ul>
 
-            </div>
             </div>
             <Contact />
             <Footer />

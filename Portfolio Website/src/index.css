@@ -2,17 +2,20 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  scrollbar-width:none;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y:scroll;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+:root::-webkit-scrollbar{
+  display:none;
+}
 a {
   font-weight: 500;
   
@@ -25,10 +28,13 @@ body {
   padding:0;
   display: flex;
   min-height: 100vh;
-  overflow-y:scroll;
+  
   background-color:#242424 ;
 }
 
+body::-webkit-scrollbar{
+  display:none;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

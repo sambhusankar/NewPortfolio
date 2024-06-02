@@ -7,6 +7,7 @@
 }
 .Work-Page{
     position: relative;
+    padding-bottom:200px;
 }
 .Work-Page::after{
     content: "";
@@ -16,7 +17,7 @@
     background-color: white;
     position: absolute;
     left:0;
-    bottom:-20vh;
+    bottom:-10vh;
     z-index: 5;
     transition: height 1s, bottom 1s;
 }
@@ -38,6 +39,7 @@
     margin:40px auto;
     position: relative;
     width:75vw;
+    align-items:center;
 }
 .display-row h2{
     position: absolute;
@@ -127,7 +129,8 @@
 }
 .Work-Page .project-small-screen{
     display: none;
-   
+    height:max-content;
+    list-style:none;
 }
 .gridclick{
     display: grid;
@@ -142,11 +145,21 @@
 }
 
 @media screen and (max-width:1040px){
+    .Work-Page{
+        padding-bottom:200px;
+    }
     .row-view, .grid-view{
         display: none;
     }
+    .Work-Page .display-row{
+        background-color:red;
+        margin-top:60px;
+    }
     .Work-Page-Container .Work-Page .work-table{
         display: none;       
+    }
+    .Work-Page .display-row button{
+        display:none;
     }
     .Work-Page .project-small-screen{
         display: grid;
@@ -159,9 +172,45 @@
         width:max-content;
         margin: auto;
     }
-    .project-small-screen div img{
-        width: 40vw;
-        height:40vw;
+    .project-small-screen li{
+        width:40vw;
+        height:max-content;
+        margin-bottom:40px;
+    }
+    .project-small-screen li img{
+        width: 100%;
+        height:30vw;
+        border:30px solid rgb(63, 64, 47);
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        
+     }
+    .project-small-screen li div{
+        position:relative;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+
+}
+
+@media screen and (max-width:700px){
+    .Work-Page .heading{
+        width:85vw;
+        font-size:8vw;
+    }
+  
+    .Work-Page .project-small-screen{
+        display: flex;
+        width:100vw;
+        justify-content:center;
+        text-align:center;
+        padding:0;
+    }
+    .project-small-screen li img{
+        width: 90vw;
+        height:60vw;
+        margin:auto;
         border:30px solid rgb(63, 64, 47);
         border-top-width: 3vw;
         border-bottom-width: 3vw;

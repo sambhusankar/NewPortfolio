@@ -14,8 +14,12 @@ function Contact(){
     const [message, setMessage] = useState('')
     function handleInput(e){
         setName(e.target.value)
+        console.log
     };
 
+    function handleSubmit(){
+        console.log(name)
+    }
     //setting the page title dynamically
     useEffect(() => {
         document.title = "Contact - Sambhu Sankar Swain"
@@ -24,7 +28,7 @@ function Contact(){
     useEffect(() => {
         const btn = Ref.current.querySelector(".send-it-btn")
         const elements = Ref.current.querySelectorAll("a")
-        elements.forEach((element) => console.log(element))
+        elements.forEach((element) => Magnetic(element))
         Magnetic(btn)
     }, []);
     return(
@@ -37,7 +41,7 @@ function Contact(){
                         <div className="form-row">
                             <h5>01</h5>
                             <label>What's your name ?</label>
-                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {handleInput}></input>
+                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {handleInput} />
                         </div>
                         <div className="form-row">
                             <h5>02</h5>
@@ -62,7 +66,7 @@ function Contact(){
                     </form>
                     <div className="line-btn">
                     <hr></hr>
-                <div className="send-it-btn hover-effect"><span>Send it !</span></div>
+                <div className="send-it-btn hover-effect" onClick = {() => handleSubmit()}><span>Send it !</span></div>
                 </div>
                 </div>
                 <div className="right-side">
