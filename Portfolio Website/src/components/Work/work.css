@@ -60,7 +60,11 @@
     border:1px solid grey;
     background-color: white;
     color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
+
 .work-table{
     width:80vw;
     margin:60px auto;
@@ -123,16 +127,11 @@
     text-align: center;
     padding: 25px;
     pointer-events: none;
-    z-index:11;
+    z-index:15;
     transform: scale(0);
     transition: transform 0.5s, left 1s, top 1s;
 }
 .Work-Page .project-small-screen{
-    display: none;
-    height:max-content;
-    list-style:none;
-}
-.gridclick{
     display: grid;
     grid-template-columns: auto auto;
     gap: 4vw;
@@ -143,7 +142,31 @@
     width:max-content;
     margin: auto;
 }
-
+.project-small-screen li{
+    width:40vw;
+    height:max-content;
+    margin-bottom:40px;
+    list-style-type:none;
+}
+.project-small-screen li img{
+    width: 100%;
+    height:30vw;
+    border:30px solid rgb(63, 64, 47);
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    background-color:rgb(63, 64, 47);
+    
+ }
+.project-small-screen li img:hover{
+    transform: scale(102%);
+    transition:transform 0.5s ease;
+}
+.project-small-screen li div{
+    position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
 @media screen and (max-width:1040px){
     .Work-Page{
         padding-bottom:200px;
@@ -183,6 +206,7 @@
         border:30px solid rgb(63, 64, 47);
         border-top-width: 60px;
         border-bottom-width: 60px;
+        background-color:rgb(63, 64, 47);
         
      }
     .project-small-screen li div{
@@ -202,18 +226,20 @@
   
     .Work-Page .project-small-screen{
         display: flex;
-        width:100vw;
-        justify-content:center;
-        text-align:center;
+        width:100vw; 
         padding:0;
+    }
+    .project-small-screen li{
+        width:90vw;
+        margin:auto;
     }
     .project-small-screen li img{
         width: 90vw;
         height:60vw;
         margin:auto;
         border:30px solid rgb(63, 64, 47);
-        border-top-width: 3vw;
-        border-bottom-width: 3vw;
+        border-top-width: 60px;
+        border-bottom-width: 60px;
         
      }
 }

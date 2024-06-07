@@ -12,18 +12,16 @@ function Contact(){
     const [company, setCompany] = useState('')
     const [service, setService] = useState('')
     const [message, setMessage] = useState('')
-    function handleInput(e){
-        setName(e.target.value)
-        console.log
-    };
 
     function handleSubmit(){
         console.log(name)
     }
+
     //setting the page title dynamically
     useEffect(() => {
         document.title = "Contact - Sambhu Sankar Swain"
     }, []);
+    
     // setting the magnetic effect to links
     useEffect(() => {
         const btn = Ref.current.querySelector(".send-it-btn")
@@ -41,7 +39,7 @@ function Contact(){
                         <div className="form-row">
                             <h5>01</h5>
                             <label>What's your name ?</label>
-                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {handleInput} />
+                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {(e) => setName(e.target.value)}></input>
                         </div>
                         <div className="form-row">
                             <h5>02</h5>
@@ -65,11 +63,12 @@ function Contact(){
                         </div>
                     </form>
                     <div className="line-btn">
-                    <hr></hr>
-                <div className="send-it-btn hover-effect" onClick = {() => handleSubmit()}><span>Send it !</span></div>
-                </div>
+                        <hr></hr>
+                        <div className="send-it-btn hover-effect" onClick = {() => handleSubmit()}><span>Send it !</span></div>
+                    </div>
                 </div>
                 <div className="right-side">
+                    <h1 className = "small-screen-heading"> <img src = "icon.png"></img> Let's start a project together</h1>
                     <img src = "icon.png" className="icon"></img>
                     <i className="arrow fa-solid fa-arrow-right"></i>
                     <ul className = "contact-details">
@@ -88,8 +87,7 @@ function Contact(){
                         <li><a href = "https://wa.link/igftyr">Whatsapp</a></li>
                     </ul>
                                 
-                </div>
-                
+                </div>         
             </div>
             <Footer />
         </div>

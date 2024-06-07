@@ -1,13 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Nav from "../Navbar/nav"
 import Footer from "../Footer/footer"
 import Contact from "../Contact/contact"
 import Magnetic from "../../Animations/magnetic"
 import transition from "../../Animations/transition"
+import "../../Animations/hover-effect.css"
 import { motion } from "framer-motion"
 import "./work.css"
 function Work(){
     const Ref = useRef(null)
+    const [rowView, SetrowView] = useState(true)
+    const [gridView, SetgridView] = useState(false)
 
     //changing the document title with page routing
     useEffect(() => {
@@ -29,6 +32,7 @@ function Work(){
         const projects = Ref.current.querySelectorAll("tr")
         const box = Ref.current.querySelector(".project-img")
         const btn = Ref.current.querySelector(".view-project")
+        const grid_view = Ref.current.querySelectorAll(".grid-item") 
         for(let i = 1; i < projects.length; i++){
             projects[i].addEventListener("mouseover", (e) => {
                 btn.style.transform = 'scale(100%)'
@@ -41,6 +45,16 @@ function Work(){
             })
             projects[i].addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0)"
+                btn.style.transform = "scale(0)"
+            })
+        }
+        for(let i = 0; i < grid_view.length; i++){
+            grid_view[i].addEventListener("mouseover", (e) => {
+                btn.style.transform = 'scale(100%)'
+                btn.style.left = e.clientX  + "px"
+                btn.style.top = e.clientY  + "px"
+            })
+            grid_view[i].addEventListener("mouseout", (e) => {
                 btn.style.transform = "scale(0)"
             })
         }
@@ -98,24 +112,40 @@ function Work(){
         })
     }, []);
 
-    //handling the row and grid view buttons
+    //handling the row and grid view buttons logic
     function handleWorkView(e){
+        const row_view = Ref.current.querySelector(".row-view")
+        const grid_view = Ref.current.querySelector(".grid-view")
+        
+        if ( e.target == row_view){
+            SetgridView(false)
+            SetrowView(true)
+        }
+        else if( e.target == grid_view){
+
+            SetgridView(true)
+            SetrowView(false)
+        }
+    };
+
+    //showing the row and grid by logic
+    useEffect(() => {
         const row = Ref.current.querySelector(".work-table")
         const grid = Ref.current.querySelector(".project-small-screen")
         const row_view = Ref.current.querySelector(".row-view")
         const grid_view = Ref.current.querySelector(".grid-view")
         
-        if ( e.target == row_view){
-            row.style.display = "inherit"
+        if(rowView == true){
+            SetgridView(false)
             grid.style.display = "none"
-            
+            row.style.display = "inherit"
         }
-        else if( e.target == grid_view){
+        if(gridView == true || document.body.clientWidth <= 1050){
+            SetrowView(false)
+            grid.style.display = "grid"
             row.style.display = "none"
-            grid.style.display = "inherit"
-            grid.classList.add("gridclick")
         }
-    };
+    }, [rowView, gridView, document.body.clientWidth]);
 
     return(
         
@@ -125,8 +155,8 @@ function Work(){
                 <h1 className="heading">Creating next level digital products</h1>
                 <div className = "display-row">
                     <h2>PRODUCTS  ⇲</h2>
-                    <button onClick={ (e) => handleWorkView(e)} className="row-view fa-solid fa-diagram-predecessor"></button>
-                    <button onClick={ (e) => handleWorkView(e)} className="grid-view fa-solid fa-table-cells-large"></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="row-view hover-effect"><span className = "fa-solid fa-diagram-predecessor"></span></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="grid-view hover-effect"><span className = "fa-solid fa-table-cells-large"></span></button>
                 </div>
                 <table className="work-table">
                     <tr>
@@ -164,11 +194,7 @@ function Work(){
                         <td>Development</td>
                         <td>2023</td>
                     </tr>
-                    <tr>
-                        <td>Weather Forecast</td>
-                        <td>Design & Development</td>
-                        <td>2024</td>
-                    </tr>
+                    
                 </table>
                 <a href="https://www.google.com" className = "view-project">View</a>
                 <div className="project-img">
@@ -182,7 +208,7 @@ function Work(){
                  <img src = "weather.png" className="live-projects"></img>
                 </div>
             <ul className = "project-small-screen">
-                <li>
+                <li className = "grid-item" >
                     <img src = "weather.png"></img>
                     <h2>Weather Forecast</h2>
                     <hr></hr>
@@ -192,7 +218,7 @@ function Work(){
                     </div>  
                 </li>
                
-                <li>
+                <li className = "grid-item" >
                     <img src = "todo.png"></img>
                     <h2>Todo App</h2>
                     <hr></hr>
@@ -202,7 +228,7 @@ function Work(){
                     </div> 
                 </li>
                
-                <li>
+                <li className = "grid-item" >
                     <img src = "storybook.png"></img>
                     <h2>Story Book</h2>
                     <hr></hr>
@@ -212,7 +238,7 @@ function Work(){
                     </div> 
                 </li>
                
-                <li>
+                <li className = "grid-item" >
                     <img src = "calculator.png"></img>
                     <h2>Calculator</h2>
                     <hr></hr>
@@ -222,7 +248,7 @@ function Work(){
                     </div> 
                 </li>
            
-                <li>
+                <li className = "grid-item" >
                     <img src = "currency.png"></img>
                     <h2>Currency Converter</h2>
                     <hr></hr>
@@ -231,7 +257,8 @@ function Work(){
                         <span>2024</span>
                     </div> 
                 </li>
-                <li>
+
+                <li className = "grid-item" >
                     <img src = "clock.png"></img>
                     <h2>Digital Clock</h2>
                     <hr></hr>
