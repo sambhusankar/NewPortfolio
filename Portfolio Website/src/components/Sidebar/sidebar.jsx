@@ -31,7 +31,11 @@ function Sidebar({isopen}){
     //making light dark to the main body on sidebar open and opening sidebar
     useEffect(() => {
         if(isopen){
-            Ref.current.style.width = "500px"
+            if(document.body.offsetWidth <= 500){
+               Ref.current.style.width = "100vw"
+            }else{
+        Ref.current.style.width = "500px"
+      }
             Ref.current.classList.add("animate")
             Ref.current.style.right = "0vw"
             document.body.style.overflow = "hidden"
