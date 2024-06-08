@@ -91,7 +91,6 @@
     .img{
         position: relative;
         width:65vh;
-        
         margin: auto;
         top:10vh;
     }
@@ -118,5 +117,14 @@
     }
     .big-name{
         bottom: 33vh;
+    }
+}
+@media screen and (max-width:500px){
+    .img{
+        right:30px;
+    }
+    .location{
+        position:absolute;
+        right:70px;
     }
 }

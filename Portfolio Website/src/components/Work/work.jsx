@@ -137,15 +137,30 @@ function Work(){
         
         if(rowView == true){
             SetgridView(false)
-            grid.style.display = "none"
-            row.style.display = "inherit"
+            
+            if(document.body.offsetWidth < 1000 && document.body.offsetWidth >= 700){
+                grid.style.display = "grid"
+            }
+            if(document.body.offsetWidth < 700){
+                grid.style.display = "flex"
+            }
+            else if(document.body.offsetWidth > 1000){
+                row.style.display = "inherit"
+            }
+            
         }
-        if(gridView == true || document.body.clientWidth <= 1050){
+        if(gridView == true){
             SetrowView(false)
-            grid.style.display = "grid"
             row.style.display = "none"
+            if(document.body.offsetWidth > 700){
+                grid.style.display = "grid"
+            }
+            else if(document.body.offsetWidth < 700){
+                grid.style.display = "flex"
+            }
         }
     }, [rowView, gridView, document.body.clientWidth]);
+
 
     return(
         

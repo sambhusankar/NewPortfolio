@@ -186,6 +186,7 @@
     .about-top-section p:nth-child(2){
         margin: 30px 0;
         width:60vw;
+        
     }
     .aboutme-bubble{
         left:45vw;
@@ -195,17 +196,25 @@
     .project-small-screen{
         display: flex;
         flex-direction: column;
-        width:100vw;
-        height:100vw;
+        width:90vw;
+        height:max-content;
+        margin:auto;
      }
+    .project-small-screen div{
+        width:90vw;
+        margin:10px auto;
+    }
      .project-small-screen div img{
-        width:92%;
+        width:100%;
         border:20px solid rgb(63, 64, 47);
         border-top-width: 60px;
         border-bottom-width: 60px;
      }
+    .more-work-btn{
+        margin-top:0;
+    }
 }
-media screen and (max-width:500px) {
+@media screen and (max-width:500px) {
 .about-top-section p:nth-child(1){
         font-size: 6vw;
     }

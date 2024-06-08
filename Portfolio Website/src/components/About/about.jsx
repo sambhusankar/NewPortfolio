@@ -166,18 +166,25 @@ function About(){
                 <img src = "tictactoe.png" className="live-projects"></img>
                  
             </div>
-            <div className = "project-small-screen">
-            
+            <div className = "project-small-screen">         
                 <div>
                     <img src = "portfolio.png"></img>
                     <h2>Old Portfolio Website</h2>
+                    <hr></hr>
+                    <div className = "d-flex justify-content-between"> 
+                        <span>Design & Development</span>
+                        <span>2023</span>
+                    </div>  
                 </div>
-                <hr></hr>
                 <div>
                     <img src = "todo.png"></img>
                     <h2>Todo App</h2>
+                    <hr></hr>
+                    <div className = "d-flex justify-content-between">
+                        <span>Design & Development</span>
+                        <span>2023</span>
+                    </div>
                 </div>
-                <hr></hr>
             </div>
             <div className="more-work">
             <Link to = "/work" className="more-work-btn shakable hover-effect-25"><span>More work</span></Link>

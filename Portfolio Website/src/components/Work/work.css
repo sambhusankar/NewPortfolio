@@ -63,6 +63,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
 }
 
 .work-table{
@@ -167,7 +168,7 @@
     flex-direction:row;
     justify-content:space-between;
 }
-@media screen and (max-width:1040px){
+@media screen and (max-width:1000px){
     .Work-Page{
         padding-bottom:200px;
     }
@@ -223,11 +224,11 @@
         width:85vw;
         font-size:8vw;
     }
-  
     .Work-Page .project-small-screen{
         display: flex;
         width:100vw; 
         padding:0;
+        flex-direction:column;
     }
     .project-small-screen li{
         width:90vw;
@@ -241,5 +242,5 @@
         border-top-width: 60px;
         border-bottom-width: 60px;
         
-     }
+    }
 }
