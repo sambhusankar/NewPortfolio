@@ -58,37 +58,37 @@ function About(){
                         <span>01</span>
                         <hr></hr>
                         <h3>Frontend</h3>
-                        <p>With a solid track record in designing websites, I deliver strong and user-friendly digital designs. (Since 2024 only in combination with development)</p>
+                        <p>With a solid track record in frontend development, I deliver robust and intuitive user experiences. (Since 2024 only in combination with backend integration)</p>
                     </div>
                     <div>
                         <span>02</span>
                         <hr></hr>
                         <h3>Backend</h3>
-                        <p>I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction. Build with Kirby CMS or Webflow.</p>
+                        <p>I develop scalable backend systems that integrate seamlessly with frontend frameworks. My focus is on performance, security, and scalability. Built with Node.js or Django.</p>
                     </div>
                     <div>
                         <span>03</span>
                         <hr></hr>
                         <h3>●The full package</h3>
-                    <p>A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.</p>
+                    <p>I deliver complete backend solutions that set me apart. My expertise in server-side development and seamless integration with frontend technologies allow me to create exceptional projects.</p>
                     </div>
                     <div>
                         <span>04</span>
                         <hr></hr>
                         <h3>Python</h3>
-                        <p>A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.</p>
+                        <p>I deliver complete Python development solutions that set me apart. My expertise in Python's versatility and seamless integration with various frameworks allow me to create exceptional projects.</p>
                     </div>
                     <div>
                         <span>05</span>
                         <hr></hr>
                         <h3>IoT</h3>
-                        <p>A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.</p>
+                        <p>Delivering end-to-end IoT solutions that stand out, I excel in integrating MTConnect, PLC programming, and TCP/IP communication for seamless, innovative projects</p>
                     </div>
                     <div>
                         <span>06</span>
                         <hr></hr>
                         <h3>MS Office</h3>
-                        <p>A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.</p>
+                        <p>Proficient in MS Office, I excel at utilizing Excel, Word, and PowerPoint to create detailed reports, effective documents, and engaging presentations, ensuring professional and polished results.</p>
                     </div>
                 </div>
             </div>

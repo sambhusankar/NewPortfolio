@@ -11,6 +11,7 @@ function Work(){
     const Ref = useRef(null)
     const [rowView, SetrowView] = useState(true)
     const [gridView, SetgridView] = useState(false)
+    const [flexView, SetflexView] = useState(false)
 
     //changing the document title with page routing
     useEffect(() => {
@@ -27,7 +28,7 @@ function Work(){
         Magnetic(heading)
     }, []);
 
-    //showing the live projects on hover
+    //showing the live projects on hover and expanding the row slightly
     useEffect(() => {
         const projects = Ref.current.querySelectorAll("tr")
         const box = Ref.current.querySelector(".project-img")
@@ -41,11 +42,12 @@ function Work(){
                 box.style.top = e.clientY -125  + "px"
                 btn.style.left = e.clientX  + "px"
                 btn.style.top = e.clientY  + "px"
-                
+                projects[i].style.padding = "0 8%"
             })
             projects[i].addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0)"
                 btn.style.transform = "scale(0)"
+                projects[i].style.padding = "0 10%"
             })
         }
         for(let i = 0; i < grid_view.length; i++){
@@ -120,11 +122,12 @@ function Work(){
         if ( e.target == row_view){
             SetgridView(false)
             SetrowView(true)
+            
         }
         else if( e.target == grid_view){
-
             SetgridView(true)
             SetrowView(false)
+            
         }
     };
 
@@ -134,44 +137,68 @@ function Work(){
         const grid = Ref.current.querySelector(".project-small-screen")
         const row_view = Ref.current.querySelector(".row-view")
         const grid_view = Ref.current.querySelector(".grid-view")
+        const active = window.getComputedStyle(row_view, "::before")
         
         if(rowView == true){
             SetgridView(false)
-            
-            if(document.body.offsetWidth < 1000 && document.body.offsetWidth >= 700){
-                grid.style.display = "grid"
-            }
-            if(document.body.offsetWidth < 700){
-                grid.style.display = "flex"
-            }
-            else if(document.body.offsetWidth > 1000){
-                row.style.display = "inherit"
-            }
-            
+            row_view.style.setProperty("--bg", "black")
+            row_view.style.setProperty("--top", "0")
+            row_view.style.color = "white"
+            grid_view.style.setProperty("--top", " 80px")
+            grid_view.style.setProperty("--bg", "rgb(7, 90, 245)")
+            grid_view.style.color = "black"
+            grid.style.display = "none"
+            row.style.display = "inherit"
         }
         if(gridView == true){
             SetrowView(false)
+            grid_view.style.setProperty("--top", "0")
+            grid_view.style.color = "white"
+            grid_view.style.setProperty("--bg", "black")
+            row_view.style.setProperty("--bg", "rgb(7, 90, 245)")
+            row_view.style.setProperty("--top", "80px")
+            row_view.style.color = "black"
             row.style.display = "none"
-            if(document.body.offsetWidth > 700){
-                grid.style.display = "grid"
-            }
-            else if(document.body.offsetWidth < 700){
-                grid.style.display = "flex"
-            }
-        }
-    }, [rowView, gridView, document.body.clientWidth]);
+            grid.style.display = "grid"
 
+        }
+    }, [rowView, gridView]);
+
+
+    // changing the view on page resize
+    useEffect(() => {
+        const row = Ref.current.querySelector(".work-table")
+        const grid = Ref.current.querySelector(".project-small-screen")
+        window.addEventListener("resize", (e) => {
+            if(document.body.clientWidth < 1000){
+                grid.style.display = "grid"
+                row.style.display = "none"
+            }
+            if(document.body.clientWidth < 700){
+                grid.style.display = "flex"
+                row.style.display = "none"
+            }
+            if(document.body.clientWidth > 1000){
+                grid.style.display = "none"
+                row.style.display = "inherit"
+            }
+        })
+
+    },[document.body.clientWidth])
+
+    
+    
 
     return(
-        
+         
         <div className="Work-Page-Container" ref = {Ref}>  
             <Nav color = "black" />
             <div className="Work-Page">
                 <h1 className="heading">Creating next level digital products</h1>
                 <div className = "display-row">
                     <h2>PRODUCTS  ⇲</h2>
-                    <button onClick={ (e) => handleWorkView(e)} className="row-view hover-effect"><span className = "fa-solid fa-diagram-predecessor"></span></button>
-                    <button onClick={ (e) => handleWorkView(e)} className="grid-view hover-effect"><span className = "fa-solid fa-table-cells-large"></span></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="row-view"><span className = "fa-solid fa-diagram-predecessor z-3"></span></button>
+                    <button onClick={ (e) => handleWorkView(e)} className="grid-view"><span className = "fa-solid fa-table-cells-large z-3"></span></button>
                 </div>
                 <table className="work-table">
                     <tr>
