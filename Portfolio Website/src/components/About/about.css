@@ -7,12 +7,12 @@
 .about-page::after{
     content: "";
     width:100vw;
-    height:20vh;
+    height:10vh;
     clip-path: ellipse(50% 50% at 50% 50%);
     background-color: white;
     position: absolute;
     left:0;
-    bottom:-10vh;
+    bottom:-5vh;
     z-index:5;
     transition: height 1s, bottom 1s;
 }
@@ -23,6 +23,7 @@
 .about-top-section{
     display: grid;
     grid-template-columns: 45vw 25vw ;
+    position:relative;
 }
 .about-top-section p:nth-child(1){
     font-size: 30px;  
@@ -164,6 +165,53 @@
     display: none;
 }
 
+@media screen and (max-width:1000px){
+    .about-page{
+        padding: 20px;
+        padding-bottom:230px;
+    }
+    .about-top-section h5{
+       visibility:hidden;
+    }
+    .about-top-section{
+        width:90vw;
+        margin:auto;
+        padding:50px;
+        box-sizing:border-box;
+    }
+    .about-top-section p:nth-child(1){
+        font-size: 25px;  
+    }
+    .about-top-section p:nth-child(2){
+        margin-left: 70px;
+    }
+    .works{
+        display:none;
+    }
+    .project-small-screen{
+        display: flex;
+        flex-direction: row;
+        width:90vw;
+        height:max-content;
+        margin:auto;
+        justify-content:space-around;
+     }
+    .project-small-screen div{
+        width:40vw;
+    }
+     .project-small-screen div img{
+        width:100%;
+        border:20px solid rgb(63, 64, 47);
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+     }
+    .aboutme-bubble{
+        position:absolute;
+        right:20px;
+        bottom:20%;
+    }
+}
+
 @media screen and (max-width:700px) {
     .about-page{
         padding: 20px;
@@ -172,20 +220,19 @@
     .more-work-btn{
         top:220px;
     }
-    .about-top-section h5, .works, .left-scroll, .right-scroll{
-        
+    .about-top-section h5, .works, .left-scroll, .right-scroll{ 
         display: none;
     }
     .about-top-section{
-        padding-top:50px;
+        padding:50px 0;
         grid-template-columns: 1fr;
     }
     .about-top-section p:nth-child(1){
-        font-size: 4vw;
+        font-size: 4.5vw;
     }
     .about-top-section p:nth-child(2){
         margin: 30px 0;
-        width:60vw;
+        width:45vw;
         
     }
     .aboutme-bubble{
@@ -212,10 +259,5 @@
      }
     .more-work-btn{
         margin-top:0;
-    }
-}
-@media screen and (max-width:500px) {
-.about-top-section p:nth-child(1){
-        font-size: 6vw;
     }
 }

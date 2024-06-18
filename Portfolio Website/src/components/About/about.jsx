@@ -31,6 +31,7 @@ function About(){
         const left_scroll = Ref.current.querySelector(".left-scroll")
         const right_scroll = Ref.current.querySelector(".right-scroll")
         const pos = left_scroll.getBoundingClientRect()
+        
         document.body.addEventListener("wheel", (e) => {
             if(e.deltaY < 0 && pos.top >= 0 ){
                 Ref.current.classList.remove("animate")

@@ -12,18 +12,18 @@
 .Work-Page::after{
     content: "";
     width:100vw;
-    height:20vh;
+    height:10vh;
     clip-path: ellipse(50% 50% at 50% 50%);
     background-color: white;
     position: absolute;
     left:0;
-    bottom:-10vh;
+    bottom:-5vh;
     z-index: 5;
     transition: height 1s, bottom 1s;
 }
 .animate::after{
-    height:0;
-    bottom:0px;
+    height:0vh;
+    bottom:0vh;
 }
 .Work-Page .heading{
     font-size:6vw;
@@ -83,11 +83,6 @@
 .display-row button:hover{
     color:white;
 }
-/* .display-row button:active::before{
-    top:0;
-    background-color:black;
-} */
-
 .work-table{
     width:80vw;
     margin:60px auto;
@@ -241,6 +236,10 @@
 }
 
 @media screen and (max-width:700px){
+    .Work-Page::after{
+        height:40px;
+        bottom:-20px;
+    }
     .Work-Page .heading{
         width:85vw;
         font-size:8vw;

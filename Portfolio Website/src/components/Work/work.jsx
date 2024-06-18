@@ -93,25 +93,15 @@ function Work(){
     //animating the page 
     useEffect(() => {
         const element = Ref.current.querySelector(".Work-Page")
-        document.body.addEventListener("wheel", (e) => {
-           
-            if( e.deltaY < 0){
+        window.addEventListener("scroll", (e) => {
+            if(element.getBoundingClientRect().bottom < window.innerHeight - 40 && element.getBoundingClientRect().bottom > 10){
                 element.classList.remove("animate")
             }
-            if( e.deltaY > 0){
+            else{
                 element.classList.add("animate")
             }
         })
-
-        document.body.addEventListener("keydown", (e) => {
-
-            if(e.key == "ArrowUp"){
-                element.classList.remove("animate")
-            }
-            if(e.key == "ArrowDown"){
-                element.classList.add("animate")
-            }
-        })
+        
     }, []);
 
     //handling the row and grid view buttons logic
@@ -122,12 +112,10 @@ function Work(){
         if ( e.target == row_view){
             SetgridView(false)
             SetrowView(true)
-            
         }
         else if( e.target == grid_view){
             SetgridView(true)
             SetrowView(false)
-            
         }
     };
 
@@ -201,11 +189,14 @@ function Work(){
                     <button onClick={ (e) => handleWorkView(e)} className="grid-view"><span className = "fa-solid fa-table-cells-large z-3"></span></button>
                 </div>
                 <table className="work-table">
+                    <thead>
                     <tr>
                         <th>project</th>
                         <th>services</th>
                         <th>year</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>Weather Forecast</td>
                         <td>Design & Development</td>
@@ -236,7 +227,7 @@ function Work(){
                         <td>Development</td>
                         <td>2023</td>
                     </tr>
-                    
+                    </tbody>
                 </table>
                 <a href="https://www.google.com" className = "view-project">View</a>
                 <div className="project-img">

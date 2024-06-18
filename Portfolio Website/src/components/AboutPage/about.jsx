@@ -5,34 +5,30 @@ import Contact from "../Contact/contact"
 import Footer from "../Footer/footer"
 function About(){
     const Ref = useRef(null);
+
     //changig the page title dynamically
     useEffect(() => {
         document.title = "About - Sambhu Sankar Swain"
     }, [])
+
      //animating the page on scroll
      useEffect(() => {
-        const page = Ref.current.querySelector(".About-page")
+        const element = Ref.current.querySelector(".About-page")
         const arrow = Ref.current.querySelector(".fa-arrow-right")
-        document.body.addEventListener("wheel", (e) => {
-            if(e.deltaY < 0){
-                page.classList.remove("animate")  
-                arrow.style.transform = "rotate(45deg)"     
+        window.addEventListener("scroll", (e) => {
+            if(element.getBoundingClientRect().bottom < window.innerHeight - 40 && element.getBoundingClientRect().bottom > 10){
+                element.classList.remove("animate")
             }
-            if(e.deltaY > 0){
-                page.classList.add("animate")
+            if(arrow.getBoundingClientRect().top < 50){
+                arrow.style.transform = "rotate(35deg)"
+                console.log(arroww.getBoundingClientRect().top)
+            }
+            else{
+                element.classList.add("animate")
                 arrow.style.transform = "rotate(0deg)"
             }
         })
-        document.addEventListener("keydown", (e) => {
-            if(e.key == "ArrowUp"){
-                page.classList.remove("animate")
-                arrow.style.transform = "rotate(45deg)"
-            }
-            if(e.key == "ArrowDown"){
-                page.classList.add("animate")
-                arrow.style.transform = "rotate(0deg)"
-            }
-        })
+        
     }, []);
 
     return(
@@ -53,7 +49,7 @@ function About(){
                     <img src = "fullphoto.jpg"></img>
                 </div>
                 <div className = "helping-section">
-                    <h2>I can help you with</h2>
+                    <h2>I can help you with<span className = "loading-anime">...</span></h2>
                     <div>
                         <span>01</span>
                         <hr></hr>

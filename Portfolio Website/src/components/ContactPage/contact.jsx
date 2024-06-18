@@ -29,10 +29,11 @@ function Contact(){
         elements.forEach((element) => Magnetic(element))
         Magnetic(btn)
     }, []);
+    
     return(
-        <div className="work-page-container" ref = { Ref }>
+        <div className="Contact-page-container" ref = { Ref }>
             <Nav color = "white" />
-            <div className="work-page">
+            <div className="Contact-page">
                 <div className="left-side">
                     <h1 className="heading">Let's start a project together</h1>
                     <form className="user-details">

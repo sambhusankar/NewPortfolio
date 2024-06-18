@@ -1,28 +1,28 @@
-.work-page-container{
+.Contact-page-container{
     background-color: #141414;
     width:100vw;
     overflow: hidden;
     padding-bottom:5px;
 }
-.work-page{
+.Contact-page{
     display: flex;
     padding:20px 10vw;
     gap:30px;
     color:white;
     padding-bottom: 200px;
-}
-.work-page .left-side .heading{
+}  
+.Contact-page .left-side .heading{
     color:white;
     font-size: 4rem;
 }
-.work-page .right-side .small-screen-heading{
+.Contact-page .right-side .small-screen-heading{
     display: none;
     width:80vw;
     align-items: center;
     font-size:8vw;
-    margin-bottom:100px;
+    
 }
-.work-page .right-side .small-screen-heading img{
+.Contact-page .right-side .small-screen-heading img{
     width:12vw;
     margin-right: 10px;
     margin-bottom: 35px;
@@ -33,7 +33,7 @@
 }
 .left-side .user-details .form-row{
     height:150px;
-    border-top: 1px solid grey;
+    border-top: 1px solid rgb(146, 145, 145);
     padding:30px 0;
 }
 
@@ -56,11 +56,11 @@
     font-size: 25px;
     color:white;
 }
-.work-page .left-side{
+.Contact-page .left-side{
     width:60vw;
     padding:0 20px;
 }
-.work-page .right-side{
+.Contact-page .right-side{
     display: flex;
     flex-direction: column;
     gap:20px;
@@ -69,7 +69,7 @@
     width:40vw;
     padding:0 20px;
 }
-.work-page .right-side .arrow{
+.Contact-page .right-side .arrow{
     transform: rotate(45deg);
     width:max-content;
     height: max-content;
@@ -77,7 +77,7 @@
 .right-side ul{
     list-style: none;
 }
-.work-page .right-side h5{
+.Contact-page .right-side h5{
     color:grey;
     font-size: 10px;
 }
@@ -104,7 +104,7 @@
 .right-side ul li a{
     color:white;
 }
-.work-page .right-side .icon{
+.Contact-page .right-side .icon{
     width:120px;
 }
 .line-btn{
@@ -135,24 +135,29 @@
 }
 
 @media screen and (max-width:700px){
-    .work-page{
+    .Contact-page{
         flex-direction:column-reverse;
         padding:10px;
         padding-bottom:180px;
     }
-    .work-page .left-side{
+    .Contact-page .left-side{
         width:100vw;
     }
-    .work-page .right-side{
+    .Contact-page .right-side{
         width:100vw;
     }
-    .work-page .left-side .heading{
+    .Contact-page .left-side .heading{
         display:none;
     }
-    .work-page .right-side .icon{
+    .Contact-page .right-side .icon{
         display:none;
     }
-    .work-page .right-side .small-screen-heading{
+    .Contact-page .right-side .small-screen-heading{
         display:flex;
+    }
+    .Contact-page .right-side .arrow{
+        position:absolute;
+        right:30px;
+        transform: rotate(135deg);
     }
 }
