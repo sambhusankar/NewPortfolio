@@ -125,33 +125,32 @@ function Work(){
         const grid = Ref.current.querySelector(".project-small-screen")
         const row_view = Ref.current.querySelector(".row-view")
         const grid_view = Ref.current.querySelector(".grid-view")
-        const active = window.getComputedStyle(row_view, "::before")
-        
-        if(rowView == true){
-            SetgridView(false)
-            row_view.style.setProperty("--bg", "black")
-            row_view.style.setProperty("--top", "0")
-            row_view.style.color = "white"
-            grid_view.style.setProperty("--top", " 80px")
-            grid_view.style.setProperty("--bg", "rgb(7, 90, 245)")
-            grid_view.style.color = "black"
-            grid.style.display = "none"
-            row.style.display = "inherit"
-        }
-        if(gridView == true){
-            SetrowView(false)
-            grid_view.style.setProperty("--top", "0")
-            grid_view.style.color = "white"
-            grid_view.style.setProperty("--bg", "black")
-            row_view.style.setProperty("--bg", "rgb(7, 90, 245)")
-            row_view.style.setProperty("--top", "80px")
-            row_view.style.color = "black"
-            row.style.display = "none"
-            grid.style.display = "grid"
+        if(window.innerWidth > 1000){
+            if(rowView == true){
+                SetgridView(false)
+                row_view.style.setProperty("--bg", "black")
+                row_view.style.setProperty("--top", "0")
+                row_view.style.color = "white"
+                grid_view.style.setProperty("--top", " 80px")
+                grid_view.style.setProperty("--bg", "rgb(7, 90, 245)")
+                grid_view.style.color = "black"
+                grid.style.display = "none"
+                row.style.display = "inherit"
+            }
+            if(gridView == true){
+                SetrowView(false)
+                grid_view.style.setProperty("--top", "0")
+                grid_view.style.color = "white"
+                grid_view.style.setProperty("--bg", "black")
+                row_view.style.setProperty("--bg", "rgb(7, 90, 245)")
+                row_view.style.setProperty("--top", "80px")
+                row_view.style.color = "black"
+                row.style.display = "none"
+                grid.style.display = "grid"
 
-        }
+            }
+         }
     }, [rowView, gridView]);
-
 
     // changing the view on page resize
     useEffect(() => {
@@ -172,7 +171,7 @@ function Work(){
             }
         })
 
-    },[document.body.clientWidth])
+    },[document.body.clientWidth]);
 
     
     
@@ -228,6 +227,7 @@ function Work(){
                         <td>2023</td>
                     </tr>
                     </tbody>
+
                 </table>
                 <a href="https://www.google.com" className = "view-project">View</a>
                 <div className="project-img">

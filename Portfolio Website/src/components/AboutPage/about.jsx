@@ -31,6 +31,19 @@ function About(){
         
     }, []);
 
+    //loading animation of texts
+    useEffect(() => {
+        const elements = Ref.current.querySelectorAll(".loading-anime")
+        setInterval(() => {
+            elements.innerText += "."
+        },1000)
+        setInterval(() => {
+            elements.innerText = ""
+        },4000)
+        
+
+    }, [])
+
     return(
         <div className="About-page-container" ref = { Ref }>
             <Nav color = "black" />
@@ -44,7 +57,7 @@ function About(){
                     <i className = "arrow fa-solid fa-arrow-right"></i>
                     <div className = "txts">
                         <p>I help companies from all over the world with tailor-made solutions. With each project, I push my work to new horizons, always putting quality first.</p>
-                        <p>Always exploring...</p>
+                        <p>Always exploring<span className = "loading-anime">...</span></p>
                     </div>
                     <img src = "fullphoto.jpg"></img>
                 </div>

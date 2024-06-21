@@ -104,10 +104,10 @@
 
 .left-scroll, .right-scroll{
     display: flex;
-    margin:20px 0;
+    margin:20px 0px;
     overflow: hidden;
     gap: 30px;
-    width:110vw;
+    width:max-content;
     position: relative;
     right:20vw;
     transition: right 1s ease;
@@ -117,8 +117,8 @@
     right:17vw;
 }
 .auto-scroll-imgs{
-    width:400px;
-    height:300px;
+    width:30vw;
+   
 }
 .about-page .project-img{
     height:300px;
@@ -184,6 +184,7 @@
     }
     .about-top-section p:nth-child(2){
         margin-left: 70px;
+        width:30vw;
     }
     .works{
         display:none;
@@ -199,7 +200,7 @@
     .project-small-screen div{
         width:40vw;
     }
-     .project-small-screen div img{
+    .project-small-screen div img{
         width:100%;
         border:20px solid rgb(63, 64, 47);
         border-top-width: 60px;
@@ -209,6 +210,9 @@
         position:absolute;
         right:20px;
         bottom:20%;
+    }
+    .more-work{
+       margin:-20px;
     }
 }
 
@@ -228,7 +232,7 @@
         grid-template-columns: 1fr;
     }
     .about-top-section p:nth-child(1){
-        font-size: 4.5vw;
+        font-size: 4vw;
     }
     .about-top-section p:nth-child(2){
         margin: 30px 0;

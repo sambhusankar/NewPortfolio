@@ -23,6 +23,9 @@
     border-top-right-radius: 70px;
     border-bottom-right-radius: 70px;
     display:flex;
+    position:relative;
+    top:10px;
+
 }
 .india{
     font-size:20px;
@@ -49,15 +52,17 @@
 .skill{
     width:400px;
     z-index:0;
-    font-size: 30px;
+    font-size: 25px;
     padding-left:30px;
     text-wrap: nowrap;
     position: relative;
     bottom:70px;
+    line-height:15px;
 }
 .skill .arrow{
     width:max-content;
     transform: rotate(-45deg);
+    line-height:30px;
 }
 .img{
     width:75vh;
@@ -70,11 +75,12 @@
 .big-name{
     position: absolute;
     font-size:23vh;
-    bottom: 18vh;
+    bottom: 6vh;
     color:white;
     animation: marquee 30s infinite linear ;
     white-space: nowrap;
-    
+    font-family: "Roboto", sans-serif;
+    font-weight:300;
 }
 
 @keyframes marquee {
@@ -90,7 +96,7 @@
     }
     .img{
         position: relative;
-        width:65vh;
+        width:72vh;
         margin: auto;
         top:10vh;
     }

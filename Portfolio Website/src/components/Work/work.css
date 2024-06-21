@@ -89,7 +89,14 @@
     position: relative;
     z-index: 6;
     display: inherit;
+    border-collapse:collapse;
 }
+
+.work-table thead, .work-table tbody{
+    width:100%;
+    display:inline-block;
+}
+
 .work-table tr{
     border-bottom: 1px solid rgb(170, 168, 168);
     height:100px; 
@@ -196,7 +203,8 @@
         margin-top:60px;
     }
     .Work-Page-Container .Work-Page .work-table{
-        display: none;       
+        background:red;
+        display:none;       
     }
     .Work-Page .display-row button{
         display:none;

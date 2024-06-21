@@ -26,7 +26,7 @@ function About(){
         
     }, []);
 
-    //left and right srolling of works and animating
+    //left and right srolling of works and 
     useEffect(() => {
         const left_scroll = Ref.current.querySelector(".left-scroll")
         const right_scroll = Ref.current.querySelector(".right-scroll")
@@ -34,26 +34,37 @@ function About(){
         
         document.body.addEventListener("wheel", (e) => {
             if(e.deltaY < 0 && pos.top >= 0 ){
-                Ref.current.classList.remove("animate")
                 left_scroll.style.right = "22vw"
                 right_scroll.style.right = "15vw"
             }
             if(e.deltaY > 0 && pos.top >= 0 ){
-                Ref.current.classList.add("animate")
                 left_scroll.style.right = "18vw"
                 right_scroll.style.right = "19vw"
             }
         })
         document.addEventListener("keydown", (e) => {
             if(e.key == "ArrowUp" && pos.top >= 0 ){
-                Ref.current.classList.remove("animate")
                 left_scroll.style.right = "22vw"
                 right_scroll.style.right = "15vw"
             }
             if(e.key == "ArrowDown" && pos.top >= 0 ){
-                Ref.current.classList.add("animate")
                 left_scroll.style.right = "18vw"
                 right_scroll.style.right = "19vw"
+            }
+        })
+    }, []);
+
+    //animationg the page with scroll
+    useEffect(() => {
+        const element = Ref.current
+        const left_scroll = Ref.current.querySelector(".left-scroll")
+        const right_scroll = Ref.current.querySelector(".right-scroll")
+        window.addEventListener("scroll", (e) => {
+            if( element.getBoundingClientRect().bottom < window.innerHeight && element.getBoundingClientRect().bottom > 20){
+                element.classList.remove("animate")
+            }
+            else{
+                element.classList.add("animate")
             }
         })
     }, []);

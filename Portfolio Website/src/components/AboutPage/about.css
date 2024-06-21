@@ -126,6 +126,10 @@
         flex-direction:column;
     }
     .helping-section h2{
-        font-size:2.5rem;
+        width:90vw;
+        text-wrap:nowrap;
+        font-size:10vw;
+        left:0;
+        margin:auto 10px;
     }
 }
