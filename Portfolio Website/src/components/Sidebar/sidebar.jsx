@@ -1,10 +1,11 @@
 import React, { useRef, useEffect } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './sidebar.css' 
 import Magnetic from "../../Animations/magnetic"
 import Socials from "../Socials/socials"
 function Sidebar({isopen}){
     const Ref = useRef(null)
+    const loc = useLocation()
     const overlay = document.createElement("div")
     overlay.classList.add("overlay")
     
@@ -12,7 +13,9 @@ function Sidebar({isopen}){
     //Link buttons hover effect
     useEffect(() => {
         const dots = Ref.current.querySelectorAll(".dot");
-        const links = Ref.current.querySelectorAll(".Links")
+        const links = Ref.current.querySelectorAll(".Links") 
+        const paths = ["/", "/about", "/work", "/contact"]
+
         for(let i = 0; i < links.length; i++){
             links[i].addEventListener("mouseover", () => {
                 links[i].style.color = "white"
@@ -21,12 +24,42 @@ function Sidebar({isopen}){
         };
         for(let i = 0; i < links.length; i++){
             links[i].addEventListener("mouseout", () => {
-                dots[i].style.fontSize = "0"
+                if(paths[i] != loc.pathname){
+                dots[i].style.fontSize = "0";
+                }
             })
-        };
         
-
+        }
     }, []);
+
+    // showing the dot on active pages
+    useEffect(() => {
+        const dots = Ref.current.querySelectorAll(".dot");
+        if(loc.pathname == "/"){
+            dots[0].style.fontSize = "50%"
+            dots[1].style.fontSize = "0vw"
+            dots[2].style.fontSize = "0vw"
+            dots[3].style.fontSize = "0vw"
+        }
+        if(loc.pathname == "/about"){
+            dots[0].style.fontSize = "0vw"
+            dots[1].style.fontSize = "50%"
+            dots[2].style.fontSize = "0vw"
+            dots[3].style.fontSize = "0vw"
+        }
+        if(loc.pathname == "/work"){
+            dots[0].style.fontSize = "0vw"
+            dots[1].style.fontSize = "0vw"
+            dots[2].style.fontSize = "50%"
+            dots[3].style.fontSize = "0vw"
+        }
+        if(loc.pathname == "/contact"){
+            dots[0].style.fontSize = "0vw"
+            dots[1].style.fontSize = "0vw"
+            dots[2].style.fontSize = "0vw"
+            dots[3].style.fontSize = "50%"
+        }
+    }, [loc.pathname])
 
     //making light dark to the main body on sidebar open and opening sidebar
     useEffect(() => {
@@ -53,45 +86,45 @@ function Sidebar({isopen}){
         }
     }, [isopen]);
 
+    //navitgations animation while loading the sidebar
     useEffect(() => {
-        const element = Ref.current.querySelector(".a");
-        element.addEventListener("mousemove", (e) => {
-            const y = element.offsetTop
-            const x = element.offsetLeft
-            const m_x = e.pageX - x - element.offsetWidth / 2
-            const m_y = e.pageY - y - element.offsetHeight / 2
-            element.style.transform = `translate(${m_x * 0.3}px, ${m_y * 0.3}px)`
-        });
-        element.addEventListener("mouseout", () => {
-            element.style.transform = "";
-        })
-    }, []);
-
-    
+        const items = Ref.current.querySelectorAll(".nav-items");
+        if(isopen){
+            items.forEach((item, i) => {
+                item.style.transform = "translateX(0)"
+                items[i].style.transitionDelay = `${i/8}s`
+            })
+        }
+        else{
+            items.forEach((item) => item.style.transform = "translateX(40px)")
+        }
+    }, [isopen]);
 
     return(
         <div className = "sidebar-page" ref = { Ref }>
             <h5>NAVIGATION</h5>
             <hr></hr>
             <ul className= "Routes" >
-                <li>
+                <li className = "nav-items">
                     <span className = "dot">●</span>
                     <Link className = "Links" to = "/">Home</Link>
                 </li>
-                <li>
+                <li className = "nav-items">
                     <span className = "dot">●</span>
                     <Link className = "Links" to = "/about">About</Link>
                 </li>
-                <li>
+                <li className = "nav-items">
                     <span className = "dot">●</span>
                     <Link className = "Links" to = "/work">Work</Link>
                 </li>
-                <li>
+                <li className = "nav-items">
                     <span className = "dot">●</span>
                     <Link className = "Links" to = "/contact">Contact</Link>
                 </li>
             </ul>
+            <hr className = "small-screen-hr"></hr>
             <div className="social-div">
+        
             <Socials />
             </div>
         </div>

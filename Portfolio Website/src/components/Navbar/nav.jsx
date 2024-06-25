@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import "./nav.css"
 import Sidebar from '../Sidebar/sidebar'
 import Magnetic from '../../Animations/magnetic';
@@ -7,6 +7,7 @@ import "../../Animations/hover-effect.css"
 
 function Nav(color){
     const navRef = useRef(null);
+    const loc = useLocation()
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     //setting the text color in different components
@@ -47,7 +48,7 @@ function Nav(color){
     useEffect(() => {
         const nav_items = navRef.current.querySelectorAll(".nav-item");
         const dots =  navRef.current.querySelectorAll(".dot");
-
+        const paths = ["/work", "/about", "/contact"]
         for(let i = 0; i < nav_items.length; i++){
             nav_items[i].addEventListener("mousemove", () => {
                 dots[i].style.fontSize = "1vw";
@@ -56,12 +57,34 @@ function Nav(color){
 
         for(let i = 0; i < nav_items.length; i++){
             nav_items[i].addEventListener("mouseout", () => {
+                if(paths[i] != loc.pathname){
                 dots[i].style.fontSize = "0";
+                }
             })
         };
+    
 
     }, []);
 
+    // showing the on active pages
+    useEffect(() => {
+        const dots =  navRef.current.querySelectorAll(".dot");
+        if(loc.pathname == "/work"){
+            dots[0].style.fontSize = "1vw"
+            dots[1].style.fontSize = "0vw"
+            dots[2].style.fontSize = "0vw"
+        }
+        if(loc.pathname == "/about"){
+            dots[0].style.fontSize = "0vw"
+            dots[1].style.fontSize = "1vw"
+            dots[2].style.fontSize = "0vw"
+        }
+        if(loc.pathname == "/contact"){
+            dots[0].style.fontSize = "0vw"
+            dots[1].style.fontSize = "0vw"
+            dots[2].style.fontSize = "1vw"
+        }
+    }, [loc.pathname])
    // showing side-bar on scroll
    useEffect(() => {
         const side_bar = navRef.current.querySelector(".side-bar");

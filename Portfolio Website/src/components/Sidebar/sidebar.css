@@ -32,17 +32,22 @@
 .Routes{
     font-size:40px;
     list-style-type: none;
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
     position: relative;
     right:10%;
 
+}
+.Routes .nav-items{
+    transform:translateX(40px);
+    transition: transform 1s ease;
 }
 .Links{
     color:white;
     margin-left: 10px;
 }
-
-
+.sidebar-page .dot{
+    color:white;
+}
 .overlay{
     position: fixed;
     top:0;
@@ -59,12 +64,23 @@
     position: absolute;
     width: 100%;
 }
+.sidebar-page  .small-screen-hr{
+    display:none;
+    color:white;
+}
+.sidebar-page hr{
+    color:white;
+}
 @media screen and (max-width:500px) {
     .sidebar-page{
         width:100vw;
+        padding-top:15vh;
     }
     .dot{
         position: relative;
         left:400px;
+    }
+    .sidebar-page  .small-screen-hr{
+        display: inherit;
     }
 }

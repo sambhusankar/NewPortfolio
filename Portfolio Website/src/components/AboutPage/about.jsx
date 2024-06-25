@@ -31,18 +31,7 @@ function About(){
         
     }, []);
 
-    //loading animation of texts
-    useEffect(() => {
-        const elements = Ref.current.querySelectorAll(".loading-anime")
-        setInterval(() => {
-            elements.innerText += "."
-        },1000)
-        setInterval(() => {
-            elements.innerText = ""
-        },4000)
-        
 
-    }, [])
 
     return(
         <div className="About-page-container" ref = { Ref }>
@@ -57,12 +46,12 @@ function About(){
                     <i className = "arrow fa-solid fa-arrow-right"></i>
                     <div className = "txts">
                         <p>I help companies from all over the world with tailor-made solutions. With each project, I push my work to new horizons, always putting quality first.</p>
-                        <p>Always exploring<span className = "loading-anime">...</span></p>
+                        <p>Always exploring<Loading /></p>
                     </div>
                     <img src = "fullphoto.jpg"></img>
                 </div>
                 <div className = "helping-section">
-                    <h2>I can help you with<span className = "loading-anime">...</span></h2>
+                    <h2>I can help you with<Loading /></h2>
                     <div>
                         <span>01</span>
                         <hr></hr>
@@ -107,3 +96,14 @@ function About(){
     )
 }
 export default About
+
+
+function Loading(){
+    return(
+        <span className = "loading-anime">
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </span>
+    )
+}

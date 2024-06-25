@@ -4,26 +4,19 @@ import Myimage from "../../assets/portfolio_image.jpg"
 import { gsap } from "gsap"
 function Hero(){
     const big_name = useRef(null)
+
     //moving the big name by page scrolling
     useEffect(() => {
-        document.addEventListener('wheel', (e) => {
-            if (e.deltaY < 0){
+        window.addEventListener("scroll", (e) => {
+            if(window.scrollY > 0){
                 big_name.current.style.animationDirection = "reverse";
             }
-            else {
-                // If scrolling right, set animation direction to normal
-                big_name.current.style.animationDirection = "normal";
-              }
-        })
-        document.addEventListener("keydown", (e) => {
-            if(e.key == "ArrowUp"){
-                big_name.current.style.animationDirection = "reverse";
-            }
-            if(e.key == "ArrowDown"){
+            else{
                 big_name.current.style.animationDirection = "normal";
             }
         })
-    })
+    }, []);
+
     return (
         <div className = "hero-page" >
             <div className = "location">
@@ -32,8 +25,7 @@ function Hero(){
                     <div className = "atlas-container">
                         <i className="fas fa-globe fa-bounce"></i>
                     </div>
-                </div>
-
+                </div> 
             </div>
 
             <div className = "photo">
