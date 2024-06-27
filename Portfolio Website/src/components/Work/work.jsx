@@ -11,7 +11,6 @@ function Work(){
     const Ref = useRef(null)
     const [rowView, SetrowView] = useState(true)
     const [gridView, SetgridView] = useState(false)
-    const [flexView, SetflexView] = useState(false)
 
     //changing the document title with page routing
     useEffect(() => {
@@ -30,31 +29,38 @@ function Work(){
 
     //showing the live projects on hover and expanding the row slightly
     useEffect(() => {
-        const projects = Ref.current.querySelectorAll("tr")
+        const projects = Array.from(Ref.current.querySelectorAll("tr")).slice(1)
         const box = Ref.current.querySelector(".project-img")
         const btn = Ref.current.querySelector(".view-project")
         const grid_view = Ref.current.querySelectorAll(".grid-item") 
-        for(let i = 1; i < projects.length; i++){
-            projects[i].addEventListener("mouseover", (e) => {
-                btn.style.transform = 'scale(100%)'
+        projects.forEach((project) => {
+            project.addEventListener("mouseover", (e) => {
+                btn.style.transform = "scale(100%)"
                 box.style.transform = "scale(100%)"
-                box.style.left = e.clientX -125 + "px"
-                box.style.top = e.clientY -125  + "px"
-                btn.style.left = e.clientX  + "px"
-                btn.style.top = e.clientY  + "px"
-                projects[i].style.padding = "0 8%"
             })
-            projects[i].addEventListener("mouseout", (e) => {
+            project.addEventListener("mousemove", (e) => {
+                const x = e.clientX - 125
+                const y = e.clientY - 125
+                box.style.left  = `${x}px`
+                box.style.top = `${y}px`
+                btn.style.left = e.clientX - 40 + "px" 
+                btn.style.top = e.clientY - 40 + "px"
+                project.style.padding = "0 8%"
+            })
+            project.addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0)"
                 btn.style.transform = "scale(0)"
-                projects[i].style.padding = "0 10%"
+                project.style.padding = "0 10%"
             })
-        }
+        })
+    
+
+        //making this in grid and flex view
         for(let i = 0; i < grid_view.length; i++){
-            grid_view[i].addEventListener("mouseover", (e) => {
+            grid_view[i].addEventListener("mousemove", (e) => {
                 btn.style.transform = 'scale(100%)'
-                btn.style.left = e.clientX  + "px"
-                btn.style.top = e.clientY  + "px"
+                btn.style.left = e.clientX - 40 + "px"
+                btn.style.top = e.clientY - 40 + "px"
             })
             grid_view[i].addEventListener("mouseout", (e) => {
                 btn.style.transform = "scale(0)"

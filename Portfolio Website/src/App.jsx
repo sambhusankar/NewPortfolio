@@ -17,14 +17,15 @@ function App() {
   }, []);
 
     document.addEventListener("keydown", (e) => {
-
-      if(e.key == "ArrowDown"){
+      if(e.key == "ArrowDown"){ 
+        e.preventDefault()
         window.scrollBy({
           top:250,
           behavior:"smooth"
         })
      }
       if(e.key == "ArrowUp"){
+        e.preventDefault()
         window.scrollBy({
           top:-250,
           behavior:"smooth"

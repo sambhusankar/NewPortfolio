@@ -76,23 +76,25 @@ function About(){
         const btn = Ref.current.querySelector(".view-project")
         
         projects.forEach((project) => {
-            
             project.addEventListener("mouseover", (e) => {
                 btn.style.transform = "scale(100%)"
                 box.style.transform = "scale(100%)"
+            })
+            project.addEventListener("mousemove", (e) => {
+                
                 const x = e.clientX - 125
                 const y = e.clientY - 125
-            
                 box.style.left  = `${x}px`
                 box.style.top = `${y}px`
-                btn.style.left = e.clientX - 20 + "px"
-                btn.style.top = e.clientY - 20 + "px"
+                btn.style.left = e.clientX - 40 + "px"
+                btn.style.top = e.clientY - 40 + "px"
             });
             project.addEventListener("mouseout", (e) => {
                 box.style.transform = "scale(0%)"
                 btn.style.transform = "scale(0%)"
             })
            
+            
         })
 
     }, []);
@@ -127,20 +129,21 @@ function About(){
     useEffect(() => {
         const box = Ref.current.querySelector(".project-small-screen");
         const btn = Ref.current.querySelector(".view-project");
-        box.addEventListener("mouseover", (e) => {
+        box.addEventListener("mousemove", (e) => {
             btn.style.transform = "scale(100%)"
-            btn.style.top = e.clientY + "px"
-            btn.style.left = e.clientX + "px"
+            btn.style.top = e.clientY - 40 + "px"
+            btn.style.left = e.clientX - 40 + "px"
         })
         box.addEventListener("mouseout", () => {
             btn.style.transform = "scale(0%)"
         })
     }, []);
 
+
     return(
         <div className = "about-page" ref = {Ref}>
             <div className="about-top-section">
-                <p>Helping brands to standout in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.</p>
+                <p className = "about-text1">Helping brands to standout in the digital era. Together we will set the new status quo. No nonsense, always on the cutting edge.</p>
                 <p>The combination of my passion for design, code & interaction positions me in a unique place in the web development world.</p>
                 <h5>RECENT WORK</h5>
                 <Link className = "aboutme-bubble hover-effect" to = "/about"><span>About me</span></Link>

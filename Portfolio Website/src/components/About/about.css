@@ -151,7 +151,7 @@
     pointer-events: none;
     z-index:11;
     transform: scale(0);
-    transition: transform 0.5s, left 1s, top 1s;
+    transition: transform 0.5s, left 0.4s, top 0.4s;
 }
 .about-page .project-img .live-projects{  
     width:100%;
