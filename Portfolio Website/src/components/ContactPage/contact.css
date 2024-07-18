@@ -32,7 +32,7 @@
     margin-top: 150px;
 }
 .left-side .user-details .form-row{
-    height:150px;
+    height:max-content;
     border-top: 1px solid rgb(146, 145, 145);
     padding:30px 0;
 }
@@ -128,7 +128,7 @@
     justify-content: center;
     overflow: hidden;
 }
-
+ 
 .socials-container{
     width:50px;
     text-align: center;
@@ -159,5 +159,8 @@
         position:absolute;
         right:30px;
         transform: rotate(135deg);
+    }
+    .Contact-page .left-side .user-details .form-row{
+        font-size:5vw;
     }
 }
