@@ -5,61 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-            margin:0;
-            padding:0;
-            
-    
-        }
-        .main{
-            height:100vh;
-            width:100vw;
-            background-color:rgb(12, 9, 9);
-    
-            
-        }
-        .two{
-            width: 100vw;
-            height:100vh;
-            background-color: red;
-            position: relative;
-        }
-  
-        .name{
-            width: 100vw;
-            height:100vh;
-            background-color: green;
-            
-        }
-        
-      
-        
+        body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.marquee-container {
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-item {
+  display: inline-block;
+  margin-right: 50px; /* Adjust spacing between items */
+  font-size:10vw;
+}
+
+.spacer {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.direction-right {
+  animation: marqueeRight 10s linear infinite;
+}
+
+.direction-left {
+  animation: marqueeLeft 10s linear infinite;
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes marqueeLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+h1{
+    height:200px;
+}
     </style>
 </head>
 <body>
-    <div class="main">
-        <p>BIDESI MAmu</p>
-        <div class = "two">
-            
-        </div>
-        <div class = "name">
-            
-        </div>
-        <p>sagar BALA</p>
-    </div>
+    <div class="marquee-container" id="marqueeContainer">
+        <h1 class="marquee-item">Dennis Snellenberg<span class="spacer">—</span></h1>
+        <h1 class="marquee-item">Dennis Snellenberg<span class="spacer">—</span></h1>
+        <h1 class="marquee-item">Dennis Snellenberg<span class="spacer">—</span></h1>
+        <h1 class="marquee-item">Dennis Snellenberg<span class="spacer">—</span></h1>
+      </div>
+      <h1>sankar</h1>
     <script>
-     const main = document.getElementsByClassName("main")[0]
-     const childs = main.children
-    
-     for(let i = 0; i < childs.length; i++){
+    window.addEventListener('scroll', function() {
+  const marqueeContainer = document.getElementById('marqueeContainer');
+  const scrollPosition = window.scrollY;
 
-     pos = childs[i].getBoundingClientRect()
-    const max = document.body.clientHeight
-    if(pos.top >= 0 && pos.top <= max){
-        console.log(childs[i])
-    }
-     
-     }
+  if (scrollPosition > 0) {
+    console.log("right")
+    marqueeContainer.classList.remove('direction-right');
+    marqueeContainer.classList.add('direction-left');
+  } else {
+    marqueeContainer.classList.remove('direction-left');
+    marqueeContainer.classList.add('direction-right');
+  }
+});
+
     </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react"
-import Nav from "../Navbar/nav"
-import Socials from "../Socials/socials"
-import Footer from "../Footer/footer"
+import React, { useState, useRef, useEffect, Suspense } from "react"
+const Nav = React.lazy(() => import("../Navbar/nav"))
+const Footer = React.lazy(() => import("../Footer/footer")) 
 import Magnetic from "../../Animations/magnetic"
 import "../../Animations/hover-effect.css"
 import "./contact.css"
 import emailjs from "emailjs-com"
+import { motion } from 'framer-motion'
 function Contact(){
     emailjs.init("sikmVpFZ_w8znQeGb")
     const Ref = useRef(null)
@@ -17,15 +17,6 @@ function Contact(){
     const [message, setMessage] = useState('')
 
     function handleSubmit(e){
-        
-        let data = {
-            from_name : name,
-            from_email : email,
-            usr_company : company,
-            usr_service : service,
-            message : message
-        }
-        
         e.preventDefault()
         emailjs.sendForm("service_own55l5", "template_vev2522", form.current , "sikmVpFZ_w8znQeGb").then(
             (result) => {
@@ -53,8 +44,12 @@ function Contact(){
     }, []);
     
     return(
-        <div className="Contact-page-container" ref = { Ref }>
-            <Nav color = "white" />
+        <motion.div initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }} 
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        className="Contact-page-container" ref = { Ref }>
+            <Suspense fallback = {<p>navbar is loading...</p>}><Nav color = "white" /></Suspense>
             <div className="Contact-page">
                 <div className="left-side">
                     <h1 className="heading">Let's start a project together</h1>
@@ -112,8 +107,8 @@ function Contact(){
                                 
                 </div>         
             </div>
-            <Footer />
-        </div>
+            <Suspense><Footer /></Suspense>
+        </motion.div>
     )
 }
 export default Contact

@@ -5,6 +5,7 @@ import Hero from "../Hero/hero"
 import About from "../About/about"
 import Contact from '../Contact/contact'
 import Footer from '../Footer/footer'
+import { motion } from 'framer-motion'
 function Home(){ 
     const hello = ["• Hello", "• नमस्ते", "• வணக்கம்", "• ନମସ୍କାର", "• ನಮಸ್ಕಾರ", "• नमस्ते"]
     const [lang, setLang] = useState('')
@@ -28,7 +29,11 @@ function Home(){
   
     
   return(
-    <div className="overflow-x-hidden overflow-y-hidden">
+    <motion.div initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }} 
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        className="overflow-x-hidden overflow-y-hidden">
       <div className="loading-page">
       <p className="text-white h1 mx-auto my-auto"> { lang } </p>
       </div>
@@ -40,9 +45,9 @@ function Home(){
        <About />
        <Contact />
        <Footer />
-    </div> 
 
-</div>
+        </div>
+    </motion.div> 
   )
 }
 

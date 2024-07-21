@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
-import Nav from "../Navbar/nav"
-import Footer from "../Footer/footer"
-import Contact from "../Contact/contact"
+import React, { useEffect, useRef, useState, Suspense } from "react";
+const Nav = React.lazy(() => import("../Navbar/nav"))
+const Footer = React.lazy(() => import("../Footer/footer"))
+const Contact = React.lazy(() => import("../Contact/contact")) 
 import Magnetic from "../../Animations/magnetic"
-import transition from "../../Animations/transition"
 import "../../Animations/hover-effect.css"
-import { motion } from "framer-motion"
 import "./work.css"
+import { motion } from 'framer-motion'
 function Work(){
     const Ref = useRef(null)
     const [rowView, SetrowView] = useState(true)
@@ -184,8 +183,12 @@ function Work(){
 
     return(
          
-        <div className="Work-Page-Container" ref = {Ref}>  
-            <Nav color = "black" />
+        <motion.div initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }} 
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        className="Work-Page-Container" ref = {Ref}>  
+            <Suspense><Nav color = "black" /></Suspense>
             <div className="Work-Page">
                 <h1 className="heading">Creating next level digital products</h1>
                 <div className = "display-row">
@@ -309,9 +312,9 @@ function Work(){
             </ul>
 
             </div>
-            <Contact />
-            <Footer />
-        </div>
+            <Suspense><Contact /></Suspense>
+            <Suspense><Footer /></Suspense>
+        </motion.div>
         
     )
 }

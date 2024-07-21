@@ -3,6 +3,7 @@ import  './about.css'
 import Nav from "../Navbar/nav"
 import Contact from "../Contact/contact"
 import Footer from "../Footer/footer"
+import { motion } from 'framer-motion'
 function About(){
     const Ref = useRef(null);
 
@@ -34,7 +35,11 @@ function About(){
 
 
     return(
-        <div className="About-page-container" ref = { Ref }>
+        <motion.div initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }} 
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        className="About-page-container" ref = { Ref }>
             <Nav color = "black" />
             <div className = "About-page">
                 <h1 className = "heading">Helping brands thrive in the digital world</h1>
@@ -92,7 +97,7 @@ function About(){
             </div>
             <Contact />
             <Footer />
-        </div>
+        </ motion.div>
     )
 }
 export default About

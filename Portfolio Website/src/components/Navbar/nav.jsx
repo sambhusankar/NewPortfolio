@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, Suspense } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import "./nav.css"
-import Sidebar from '../Sidebar/sidebar'
+const Sidebar = React.lazy(() => import('../Sidebar/sidebar')) 
 import Magnetic from '../../Animations/magnetic';
 import "../../Animations/hover-effect.css"
 
@@ -85,6 +85,7 @@ function Nav(color){
             dots[2].style.fontSize = "1vw"
         }
     }, [loc.pathname])
+    
    // showing side-bar on scroll
    useEffect(() => {
         const side_bar = navRef.current.querySelector(".side-bar");
@@ -158,7 +159,7 @@ function Nav(color){
                 <p className = "shakable">Contact</p>
                 <span className = "dot">●</span>
             </Link>
-            <Sidebar isopen = { sidebarOpen }/>
+            <Suspense><Sidebar isopen = { sidebarOpen }/></Suspense>
         </div>
     )
 }

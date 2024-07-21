@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, Suspense } from "react"
 import { Link, useLocation } from 'react-router-dom'
 import './sidebar.css' 
-import Magnetic from "../../Animations/magnetic"
-import Socials from "../Socials/socials"
+const Socials = React.lazy( () => import("../Socials/socials"))
 function Sidebar({isopen}){
     const Ref = useRef(null)
     const loc = useLocation()
@@ -125,7 +124,7 @@ function Sidebar({isopen}){
             <hr className = "small-screen-hr"></hr>
             <div className="social-div">
         
-            <Socials />
+            <Suspense><Socials /></Suspense>
             </div>
         </div>
     )

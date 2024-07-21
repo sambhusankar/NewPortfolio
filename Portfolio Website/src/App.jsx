@@ -50,6 +50,7 @@ function App() {
     })
 
   return(
+    <AnimatePresence mode = "wait">
      <div>
      <Routes location={location} key = {location.pathname}>
       <Route path = "/" element = { <Home /> }></Route>
@@ -59,6 +60,7 @@ function App() {
      </Routes>
      
     </div>
+    </AnimatePresence>
   )
 }
 
