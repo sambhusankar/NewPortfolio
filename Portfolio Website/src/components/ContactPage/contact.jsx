@@ -57,27 +57,27 @@ function Contact(){
                         <div className="form-row">
                             <h5>01</h5>
                             <label>What's your name ?</label>
-                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {(e) => setName(e.target.value)} name = "user_name"></input>
+                            <input type = "text" placeholder="John Doe *" value = {name} onChange = {(e) => setName(e.target.value)} name = "user_name" required></input>
                         </div>
                         <div className="form-row">
                             <h5>02</h5>
                             <label>What's your email ?</label>
-                            <input type = "email" placeholder="john@doe.com *" value = {email} onChange = {(e) => setEmail(e.target.value)} name = "user_email"></input>
+                            <input type = "email" placeholder="john@doe.com *" value = {email} onChange = {(e) => setEmail(e.target.value)} name = "user_email" required></input>
                         </div>
                         <div className="form-row">
                             <h5>03</h5>
                             <label>What's the name of your organizaion ?</label>
-                            <input type = "text" placeholder="John & Doe®" value = {company} onChange = {(e) => setCompany(e.target.value)} name = "user_org"></input>
+                            <input type = "text" placeholder="John & Doe®" value = {company} onChange = {(e) => setCompany(e.target.value)} name = "user_org" required></input>
                         </div>
                         <div className="form-row">
                             <h5>04</h5>
                             <label>What service are you looking for ?</label>
-                            <input type = "text" placeholder="Web Development..." value = {service} onChange = {(e) => setService(e.target.value)} name = "user_service"></input>
+                            <input type = "text" placeholder="Web Development..." value = {service} onChange = {(e) => setService(e.target.value)} name = "user_service" required></input>
                         </div>
                         <div className="form-row">
                             <h5>05</h5>
                             <label>Your message</label>
-                            <input type = "text" placeholder="Hello Sankar can you help me with...*" value = {message} onChange = {(e) => setMessage(e.target.value)} name = "user_message"></input>
+                            <input type = "text" placeholder="Hello Sankar can you help me with...*" value = {message} onChange = {(e) => setMessage(e.target.value)} name = "user_message" required></input>
                         </div>
                     </form>
                     <div className="line-btn">
